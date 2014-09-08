@@ -4,9 +4,9 @@ Cargo Bay is a html, scss/css, js component library with some useful and commonl
 
 
 ### Includes
-- [Scroll-to javascript-snippit](src/scroll-to/)
-- [Scroll-to-top javascript-snippit](src/scroll-to-top/)
-- [Toggle javascript-snippit](src/toggle/)
+- [Scroll-to](src/scroll-to/)
+- [Scroll-to-top](src/scroll-to-top/)
+- [Toggle](src/toggle/)
 - [Cookie-consent bar](src/cookie-consent/)
 - [Responsive navigation](src/navigation/)
 - [Responsive audioplayer](src/audioplayer/)
