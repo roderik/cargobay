@@ -4,7 +4,7 @@
 CSS3 Full Image background with a fallback ([jquery-backstretch](https://github.com/srobbin/jquery-backstretch, 'jquery-backstretch')) for older browsers.
 The image is placed inline for content-input of the image trough the CMS.
 
-Default, `background-size:cover` will be used. For browsers that don't support this feature, modernizr will deliver the fallback scripts.
+Default, `background-size:cover` will be used. For browsers that don't support this feature, Modernizr will deliver the fallback scripts.
 
 
 
@@ -39,7 +39,7 @@ Make sure that when you build your Modernizr you have the *Modernizr.load()* pro
 
 
 #### Fallback
-##### Initialize
+##### Initialise
 ```javascript
 Modernizr.load({
     test: Modernizr.backgroundsize,

@@ -1,14 +1,14 @@
 ## Cargo Bay Toggle
 
 ### General
-- Toggle snippit
+- Toggle snippet
 
 ### Dependencies
 - [jQuery](http://jquery.com/)
 - [Velocity.js](http://julian.com/research/velocity/)
 
 
-### Initialize
+### Initialise
 ```javascript
 cargobay.toggle.init();
 ```

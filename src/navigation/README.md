@@ -18,7 +18,7 @@
 - Font-awesome (icons for toggles and active state of small version)
 
 
-### Initialize
+### Initialise
 ```javascript
 cargobay.navigation.init();
 ```
@@ -174,16 +174,11 @@ $navigation-small-link-border-top-color:            #fff!default;
 
 
 ### Support
+- Latest Chrome
+- Latest FireFox
+- Latest Safari
+- IE9 and up
 
-#### Jquery version
-- Android 2.0 and up
-- iOS 4.0 and up
-- WP 7.5 and up
-
-#### Vanilla version
-- Android 3.0 and up
-- iOS 5.0 and up
-- WP 7.8 and up
 
 
 ### Pitfalls

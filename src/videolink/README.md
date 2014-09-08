@@ -21,7 +21,7 @@
 
 
 
-### Initialize
+### Initialise
 ```javascript
 cargobay.videolink.init();
 ```
@@ -60,7 +60,7 @@ $videolink-background:          #000;
 
 
 ### Support
-#### Jquery version
+#### JQuery version
 - Latest Chrome
 - Latest FireFox
 - Latest Safari

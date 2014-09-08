@@ -1,7 +1,7 @@
 ## Cargo Bay Scroll-to
 
 ### General
-- Scroll to snippit
+- Scroll to snippet
 - JQuery and vanilla-js version
 
 
@@ -9,7 +9,7 @@
 - jQuery for the jQuery version
 
 
-### Initialize
+### Initialise
 ```javascript
 cargobay.scrollTo.init();
 ```

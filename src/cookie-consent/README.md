@@ -14,7 +14,7 @@
 
 
 
-### Initialize
+### Initialise
 ```javascript
 cargobay.cookieconsent.init();
 ```
@@ -60,7 +60,7 @@ $cookie-bar-button-margin:                  0 0 0 5px!default;
 
 
 ### Support
-#### Jquery version
+#### jQuery version
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
