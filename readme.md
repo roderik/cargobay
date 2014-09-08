@@ -1,6 +1,6 @@
 ## Cargo Bay _v0.2.1_
 
-Cargo Bay is a html, scss/css, js component library with some usefull and commonly used components and snippits.
+Cargo Bay is a html, scss/css, js component library with some useful and commonly used components and snippets.
 
 
 ### Includes
@@ -26,7 +26,7 @@ bower install cargobay
 ##### Git Flow
 Cargo Bay works with [git-flow](https://github.com/nvie/gitflow).
 
-For a contribution to Cargo Bay, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization) with the addtion of a pull-request.
+For a contribution to Cargo Bay, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization) with the addition of a pull-request.
 
 Example for adding a feature:
 - Start from develop (make sure to pull first)

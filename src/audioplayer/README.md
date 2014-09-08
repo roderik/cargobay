@@ -1,9 +1,9 @@
-## Cargo Bay Audioplayer
+## Cargo Bay Audio player
 
 ### General
 - Responsive audioplayer that uses html5 audio.
 - Uses embed as fallback (includes check on type).
-- Jquery only.
+- JQuery only.
 - Based on [http://tympanus.net/codrops/2012/12/04/responsive-touch-friendly-audio-player](http://tympanus.net/codrops/2012/12/04/responsive-touch-friendly-audio-player)
 
 
@@ -20,7 +20,7 @@
 - Font-awesome (icons)
 
 
-### Initialize
+### Initialise
 ```javascript
 $('.js-audio-player').audioPlayer();
 ```
