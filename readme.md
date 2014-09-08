@@ -1,4 +1,4 @@
-## Cargo Bay _v0.1.0_
+## Cargo Bay _v0.2.1_
 
 Cargo Bay is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
