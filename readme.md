@@ -1,10 +1,18 @@
-## Cargo Bay _v1.0.0_
+## Cargo Bay _v0.1.0_
 
 Cargo Bay is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
 
 ### Includes
-TODO
+- [Scroll-to javascript-snippit](src/scroll-to/)
+- [Scroll-to-top javascript-snippit](src/scroll-to-top/)
+- [Toggle javascript-snippit](src/toggle/)
+- [Cookie-consent bar](src/cookie-consent/)
+- [Responsive navigation](src/navigation/)
+- [Responsive audioplayer](src/audioplayer/)
+- [Videolink](src/videolink/)
+- [Full image background fallack](src/full-img-bg/)
+
 
 
 ### Installing using Bower
