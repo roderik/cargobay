@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Responsive navigation, small version
+   ========================================================================== */
+
+.navigation--small{
+    .navigation__btn{
+        display: block;
+        width: 100%;
+        color: #fff;
+        background: transparent;
+        border-radius: 7px;
+        border: none;
+        padding: 10px 15px;
+    }
+
+    .navigation__item{
+        display: block;
+        float: none;
+
+        & + .navigation__item{
+            border-top: 1px solid rgba(255,255,255,.5);
+        }
+    }
+
+    .navigation__level--sublevel{
+        display: block;
+        width: 100%;
+        position: static;
+    }
+
+    .navigation__level__wrapper{
+        background-color: transparent;
+        background: none;
+        border: none;
+        color: #fff;
+    }
+
+    .navigation__item--sublevel{
+        & + .navigation__item--sublevel{
+            border-top: 1px solid rgba(255,255,255,.5);
+        }
+    }
+}

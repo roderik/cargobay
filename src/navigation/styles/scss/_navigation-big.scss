@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Responsive navigation, big version
+   ========================================================================== */
+
+.navigation--big{
+    .toggle-item{
+        height: auto !important;
+    }
+
+    .navigation__item{
+        &:hover{
+
+            > .navigation__level--sublevel{
+                display: block;
+            }
+        }
+    }
+}

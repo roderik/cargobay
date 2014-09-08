@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Responsive navigation
+   ========================================================================== */
+
+@font-face {
+	font-family: 'icomoon';
+	src: url("../../fonts/icomoon/icomoon.eot?j0ce4m");
+	src: url("../../fonts/icomoon/icomoon.eot?#iefixj0ce4m") format("embedded-opentype"), url("../../fonts/icomoon/icomoon.woff?j0ce4m") format("woff"), url("../../fonts/icomoon/icomoon.ttf?j0ce4m") format("truetype"), url("../../fonts/icomoon/icomoon.svg?j0ce4m#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1; /* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-left:before {
+	content: "\f053";
+}
+
+.icon-chevron-right:before {
+	content: "\f054";
+}
+
+.icon-chevron-up:before {
+	content: "\f077";
+}
+
+.icon-chevron-down:before {
+	content: "\f078";
+}
+
+/* ==========================================================================
+   Responsive navigation, big version
+   ========================================================================== */
+
+.navigation--big .toggle-item {
+	height: auto !important;
+}
+
+.navigation--big .navigation__item:hover > .navigation__level--sublevel {
+	display: block;
+}
+
+/* ==========================================================================
+   Responsive navigation, small version
+   ========================================================================== */
+
+.navigation--small .navigation__btn {
+	display: block;
+	width: 100%;
+	color: #fff;
+	background: transparent;
+	border-radius: 7px;
+	border: none;
+	padding: 10px 15px;
+}
+
+.navigation--small .navigation__item {
+	display: block;
+	float: none;
+}
+
+.navigation--small .navigation__item + .navigation__item {
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.navigation--small .navigation__level--sublevel {
+	display: block;
+	width: 100%;
+	position: static;
+}
+
+.navigation--small .navigation__level__wrapper {
+	background-color: transparent;
+	background: none;
+	border: none;
+	color: #fff;
+}
+
+.navigation--small .navigation__item--sublevel + .navigation__item--sublevel {
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* General
+   ========================================================================== */
+
+.navigation {
+	display: block;
+	position: relative;
+	width: 100%;
+	background: linear-gradient(45deg, #3681d8 0%, #266fc4 100%);
+	border-radius: 7px;
+	border: 1px solid #2263af;
+	box-shadow: inset -1px 1px 1px 0px #278cc2;
+}
+
+.navigation ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.navigation__btn {
+	display: none;
+}
+
+.navigation__Level {
+	display: block;
+	width: 100%;
+}
+
+.navigation__item {
+	display: block;
+	float: left;
+	color: #fff;
+	padding: 10px 15px;
+}
+
+.navigation__item:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation__item--sublevel {
+	display: block;
+	list-style-type: none;
+	margin: 0px;
+	padding: 10px 15px;
+}
+
+.navigation__level--sublevel {
+	display: none;
+	width: calc(100% - 14px);
+	position: absolute;
+	top: 100%;
+	left: 7px;
+}
+
+.navigation__level__wrapper {
+	display: block;
+	width: 100%;
+	background: linear-gradient(135deg, #f7f7f7 0%, white 100%);
+	border-radius: 0px 0px 7px 7px;
+	border: 1px solid #dedede;
+	color: #555;
+}
+
+.navigation__level__wrapper h2 {
+	padding: 0px 15px;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
