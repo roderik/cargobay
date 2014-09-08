@@ -39,6 +39,3 @@ Example for adding a feature:
 
 ### License
 Cargo Bay is licensed under the [MIT license](http://opensource.org/licenses/MIT).
-
-
-[![Analytics](https://ga-beacon.appspot.com/UA-3160735-7/Kunstmaan/cargobay)](https://github.com/igrigorik/ga-beacon)
