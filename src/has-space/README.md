@@ -2,7 +2,6 @@
 
 ### General
 - Calculates if items in a given container have enough space to stand next to eachother.
-- JQuery version
 
 
 ### Dependencies
