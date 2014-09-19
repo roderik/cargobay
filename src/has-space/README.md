@@ -38,8 +38,8 @@ The classes **'.has-space--space'** and **'.has-space--no-space'** are used to d
 <nav role="navigation" id="has-space__space-hook--nav2" data-space-hook-target="#has-space__space-hook--nav2" class="js-has-space demo-nav">
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
-    <a href="#" class="js-has-space__item demo-nav__item demo-nav__item--hidden">Item</a>
-    <a href="#" class="js-has-space__item demo-nav__item demo-nav__item--hidden">Item</a>
+    <a href="#" class="js-has-space__item js-has-space__item--hidden demo-nav__item demo-nav__item--hidden">Item</a>
+    <a href="#" class="js-has-space__item js-has-space__item--hidden demo-nav__item demo-nav__item--hidden">Item</a>
 </nav>
 ```
 
