@@ -23,27 +23,27 @@ With the attribute **data-space-hook-target="your_class_or_id_here"** you can ho
 The classes **'.has-space--space'** and **'.has-space--no-space'** are used to define the state. This class is set on the container you defined with the class **'.js-has-space'**.
 
 
+#### Demo 1 - Class as space-hook-target
 ```html
-<h4>
-    Demo 1 - Class as space-hook-target
-</h4>
 <nav role="navigation" data-space-hook-target=".js-has-space__space-hook--nav-1" class="js-has-space js-has-space__space-hook--nav-1 demo-nav">
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
 </nav>
-<h4>
-    Demo 2 - Id as space-hook-target, has hidden items
-</h4>
+```
+
+#### Demo 2 - Id as space-hook-target, has hidden items
+```html
 <nav role="navigation" id="has-space__space-hook--nav2" data-space-hook-target="#has-space__space-hook--nav2" class="js-has-space demo-nav">
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item demo-nav__item--hidden">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item demo-nav__item--hidden">Item</a>
 </nav>
-<h4>
-    Demo 3 - External class as space-hook-target
-</h4>
+```
+
+#### Demo 3 - External class as space-hook-target
+```html
 <nav role="navigation" data-space-hook-target=".has-space__space-hook--nav3" class="js-has-space demo-nav">
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
     <a href="#" class="js-has-space__item demo-nav__item">Item</a>
