@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Scroll To
+   Has Space
 
    Initialize:
    cargobay.hasSpace.init();

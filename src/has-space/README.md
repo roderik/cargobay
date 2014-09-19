@@ -1,30 +1,35 @@
-## Cargo Bay Scroll-to
+## Cargo Bay Has-space
 
 ### General
-- Scroll to snippet
-- JQuery and vanilla-js version
+- Calculates if items in a given container have enough space to stand next to eachother.
+- JQuery version
 
 
 ### Dependencies
-- jQuery for the jQuery version
+- jQuery
 
 
 ### Initialise
 ```javascript
-cargobay.scrollTo.init();
+cargobay.hasSpace.init();
 ```
 
 
 ### Usage
-The class **'.js-scroll-to'** is used as the javascript-hook.
-Place this on a link-tag and on click there will be a scroll animation to the element defined in the href-attribute.
+The class **'.js-has-space'** is used as the javascript-hook for the container.
+The class **'.js-has-space__item'** is used as the javascript-hook for the items that are in the container.
 
-With the **data-offset** attribute, you can set the desired offset from the target to scroll to.
+With the attribute **data-space-hook-target="your_class_or_id_here"** you can hook on to an element that will be used to calculcate the available space.
 
-With the **data-animation-duration** attribute, you can set the desired duration of the scroll animation. (defaults to 300ms)
+The classes **'.has-space--space'** and **'.has-space--no-space'** are used to define the state. This class is set on the container you defined with the class **'.js-has-space'**.
+
 
 ```html
-<a href="#chapter-two" data-offset="20" data-animation-duration="300" class="js-scroll-to" >Scroll to #chapter-two please</a>
+<nav role="navigation" data-space-hook-target=".js-has-space__space-hook--nav-1" class="js-has-space js-has-space__space-hook--nav-1">
+    <a href="#" class="js-has-space__item">Item</a>
+    <a href="#" class="js-has-space__item">Item</a>
+    <a href="#" class="js-has-space__item">Item</a>
+</nav>
 ```
 
 
