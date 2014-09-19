@@ -30,7 +30,7 @@ cargobay.hasSpace = (function($, window, undefined) {
                 enoughSpaceWidth = 0;
 
             $this.find(containerItemClass).each(function() {
-                if ($(this).css('display') !== 'none') {
+                if (!$(this).hasClass('js-has-space__item--hidden')) {
                     enoughSpaceWidth += parseInt($(this).outerWidth(), 10);
                 }
             });

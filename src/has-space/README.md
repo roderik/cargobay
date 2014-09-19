@@ -17,6 +17,7 @@ cargobay.hasSpace.init();
 ### Usage
 The class **'.js-has-space'** is used as the javascript-hook for the container.
 The class **'.js-has-space__item'** is used as the javascript-hook for the items that are in the container.
+The class **'.js-has-space__item--hidden'** is used as the javascript-hook to exclude the item from the total needed width calculation.
 
 With the attribute **data-space-hook-target="your_class_or_id_here"** you can hook on to an element that will be used to calculcate the available space.
 
