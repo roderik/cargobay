@@ -16,7 +16,7 @@ var cargobay = cargobay || {};
 
 cargobay.toggle = (function(window, undefined) {
 
-    var init, findParent, toggle, show, hide, hideFast;
+    var init, findParent, addMultiEventistener, toggle, show, hide, hideFast;
 
     // Config
     var animationDuration = 150,
@@ -27,121 +27,111 @@ cargobay.toggle = (function(window, undefined) {
         itemContentClass = 'toggle-item__content';
 
 
+    // Init
     init = function() {
         toggle();
     };
 
+
+    // Find parent of a element with a certain class
     findParent = function(el) {
         var iNode = el.parentNode;
 
         while(iNode){
-            if(iNode.classList.contains('containerClass')) {
+            if(iNode.classList.contains(containerClass)) {
                 return iNode;
             }
 
             iNode = iNode.parentNode;
-        };
+        }
+    };
+
+
+    // Add multiple listeners
+    addMultiEventistener = function(el, s, fn) {
+        var evts = s.split(' ');
+
+        for (var i=0, iLen=evts.length; i<iLen; i++) {
+            el.addEventListener(evts[i], fn, false);
+        }
     };
 
 
     // Main toggle function
     toggle = function() {
         [].forEach.call( document.querySelectorAll('.' + btnClass), function(btn) {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-            });
-            btn.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-            });
-            btn.addEventListener('mousedown', function(e) {
+            addMultiEventistener(btn, 'click touchstart mousedown', function(e){
                 e.preventDefault();
             });
 
-            btn.addEventListener('touchend', function(e) {
-                var container = findParent(this);
+            addMultiEventistener(btn, 'touchend mouseup', function(e){
+                var container = findParent(btn),
+                    otherActiveItem = container.querySelectorAll('.' + itemClassActive)[0],
+                    target = container.querySelectorAll(btn.dataset.target)[0],
+                    targetContent = target.querySelectorAll('.' + itemContentClass)[0],
+                    targetContentHeight = targetContent.offsetHeight,
+                    currentTargetIsActive = target.classList.contains(itemClassActive);
 
-                console.log(container);
+                if(currentTargetIsActive) {
+                    // Target is active, so hide it
+                   hide(btn, target);
 
-            });
-
-            btn.addEventListener('mouseup', function(e) {
-                var container = findParent(this);
-
-                console.log(container);
-
-            });
-        });
-
-        /*
-        $('.' + btnClass).on('click touchstart mousedown', function(e) {
-            e.preventDefault();
-        }).on('touchend mouseup', function() {
-            var $this = $(this),
-                $container = $this.parents('.' + containerClass),
-                $otherActiveItem = $container.find('.' + itemClassActive),
-                $target = $($this.data('target')),
-                $targetContent = $target.find('.' + itemContentClass),
-                targetContentHeight = $targetContent.height();
-                currentTargetIsActive = $target.hasClass(itemClassActive);
-
-            if(currentTargetIsActive) {
-                // Target is active, so hide it
-               hide($this, $target);
-
-            } else {
-                // Clear others
-                if($otherActiveItem[0]) {
-                    hideFast($('.' + btnClassActive), $otherActiveItem);
+                } else {
+                    // Clear others
+                    if(otherActiveItem) {
+                        hideFast(('.' + btnClassActive), otherActiveItem);
+                    }
+                    // Update target
+                    show(this, target, targetContent, targetContentHeight);
                 }
-                // Update target
-                show($this, $target, $targetContent, targetContentHeight);
-            }
+            });
         });
-        */
     };
 
 
     // Show an item
-    show = function($btn, $target, $targetContent, height) {
-        /*
-        $btn.addClass(btnClassActive);
-        $target.addClass(itemClassActive);
+    show = function(btn, target, targetContent, height) {
+        btn.classList.add(btnClassActive);
+        target.classList.add(itemClassActive);
 
-        $target.velocity({
-            height: height
-        }, {
-            duration: animationDuration,
-            complete: function() {
-                $target.css('height', 'auto');
+        Velocity({
+            elements: target,
+            properties: {
+                height: height
+            },
+            options: {
+                duration: animationDuration,
+                complete: function() {
+                    target.style.height = 'auto';
+                }
             }
         });
-        */
     };
 
 
     // Hide an item
-    hide = function($btn, $target) {
-        /*
-        $target.velocity({
-            height: 0
-        }, {
-            duration: animationDuration,
-            complete: function() {
-                $btn.removeClass(btnClassActive);
+    hide = function(btn, target) {
+        Velocity({
+            elements: target,
+            properties: {
+                height: 0
+            },
+            options: {
+                duration: animationDuration,
+                complete: function() {
+                    btn.classList.remove(btnClassActive);
+                }
             }
         });
 
-        $target.removeClass(itemClassActive);
-        */
+        target.classList.remove(itemClassActive);
     };
 
     hideFast = function($btn, $target) {
-        /*
-        $btn.removeClass(btnClassActive);
+        btn.classList.remove(btnClassActive);
 
-        $target.css('height', 0);
-        $target.removeClass(itemClassActive);
-        */
+        target.style.height = 0;
+        target.classList.remove(itemClassActive);
     };
 
 

@@ -27,6 +27,7 @@ cargobay.toggle = (function($, window, undefined) {
         itemContentClass = 'toggle-item__content';
 
 
+    // Init
     init = function() {
         toggle();
     };
@@ -42,7 +43,7 @@ cargobay.toggle = (function($, window, undefined) {
                 $otherActiveItem = $container.find('.' + itemClassActive),
                 $target = $($this.data('target')),
                 $targetContent = $target.find('.' + itemContentClass),
-                targetContentHeight = $targetContent.height();
+                targetContentHeight = $targetContent.height(),
                 currentTargetIsActive = $target.hasClass(itemClassActive);
 
             if(currentTargetIsActive) {
