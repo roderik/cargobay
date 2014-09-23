@@ -2,10 +2,11 @@
 
 ### General
 - Calculates if items in a given container have enough space to stand next to eachother.
+- jQuery and vanilla-ja version
 
 
 ### Dependencies
-- jQuery
+- jQuery (for jQuery version)
 
 
 ### Initialise
@@ -60,4 +61,4 @@ The classes **'.has-space--space'** and **'.has-space--no-space'** are used to d
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE9 and up
+- IE9 (IE10 for vanilla version) and up
