@@ -2,9 +2,10 @@
 
 ### General
 - Toggle snippet
+- jQuery and vanilla js version
 
 ### Dependencies
-- [jQuery](http://jquery.com/)
+- [jQuery](http://jquery.com/) (for jQuery version)
 - [Velocity.js](http://julian.com/research/velocity/)
 
 
@@ -51,4 +52,4 @@ Inside the button you can optionally have a set of icons to illustrate the state
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE9 and up
+- IE9 (IE10 for vanilla version) and up

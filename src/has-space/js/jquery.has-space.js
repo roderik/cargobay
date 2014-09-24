@@ -44,7 +44,7 @@ cargobay.hasSpace = (function($, window, undefined) {
     };
 
     toggleState = function(currentContainer, currentSpaceHook, currentEnoughSpaceWidth) {
-        currentAvailableSpaceWidth = $(currentSpaceHook).width() - ($(currentSpaceHook).outerWidth() - $(currentSpaceHook).width());
+        var currentAvailableSpaceWidth = $(currentSpaceHook).width() - ($(currentSpaceHook).outerWidth() - $(currentSpaceHook).width());
 
         if (currentEnoughSpaceWidth > currentAvailableSpaceWidth) {
             currentContainer.addClass('has-space--no-space')
