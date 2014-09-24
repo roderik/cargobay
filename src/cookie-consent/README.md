@@ -1,6 +1,9 @@
 ## Cargo Bay Cookie Consent
 
 ### General
+- Cookiebar
+- jQuery and vanilla-js version
+
 ### Required includes
 - **Javascript**
     - jquery.cookie-consent.js or vanilla.cookie-consent.js
@@ -10,7 +13,7 @@
 
 
 ### Dependencies
-- jQuery (only for jquery.cookie-consent.js)
+- jQuery (for jQuery version)
 
 
 
@@ -60,14 +63,7 @@ $cookie-bar-button-margin:                  0 0 0 5px!default;
 
 
 ### Support
-#### jQuery version
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE 9 and up
-
-#### Vanilla version
-- Latest Chrome
-- Latest FireFox
-- Latest Safari
-- IE 9 and up
+- IE9 (IE10 for vanilla version) and up
