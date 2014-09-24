@@ -25,7 +25,7 @@ cargobay.hasSpace = (function(window, undefined) {
 
     calcSpace = function() {
         [].forEach.call( document.querySelectorAll(containerClass), function(container) {
-            var spaceHook = container.dataset.spaceHookTarget,
+            var spaceHook = container.getAttribute('data-space-hook-target'),
                 enoughSpaceWidth = 0;
 
             [].forEach.call( container.querySelectorAll(containerItemClass), function(item) {
@@ -33,6 +33,8 @@ cargobay.hasSpace = (function(window, undefined) {
                     enoughSpaceWidth += parseInt(item.offsetWidth, 10);
                 }
             });
+
+            console.log(spaceHook);
 
             toggleState(container, spaceHook, enoughSpaceWidth);
 

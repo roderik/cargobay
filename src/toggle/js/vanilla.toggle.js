@@ -67,7 +67,7 @@ cargobay.toggle = (function(window, undefined) {
             addMultiEventistener(btn, 'touchend mouseup', function(e){
                 var container = findParent(btn),
                     otherActiveItem = container.querySelectorAll('.' + itemClassActive)[0],
-                    target = container.querySelectorAll(btn.dataset.target)[0],
+                    target = container.querySelectorAll(btn.getAttribute('data-target'))[0],
                     targetContent = target.querySelectorAll('.' + itemContentClass)[0],
                     targetContentHeight = targetContent.offsetHeight,
                     currentTargetIsActive = target.classList.contains(itemClassActive);

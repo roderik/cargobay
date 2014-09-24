@@ -30,8 +30,8 @@ cargobay.scrollTo = (function(window, undefined) {
                 e.preventDefault();
 
                 var target = this.getAttribute('href').slice(+1),
-                    dataOffset = this.dataset.offset,
-                    dataDuration = this.dataset.animationDuration,
+                    dataOffset = this.getAttribute('data-offset'),
+                    dataDuration = this.getAttribute('data-animation-duration'),
                     targetTop;
 
                 targetOffset = (typeof dataOffset !== undefined && !isNaN(dataOffset)) ? dataOffset : defaultOffset;
