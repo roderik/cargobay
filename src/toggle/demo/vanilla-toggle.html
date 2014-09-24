@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Cargo Bay Toggle - jQuery</title>
+    <title>Cargo Bay Toggle - Vanilla</title>
 
     <meta name="description" content="Cargo Bay Toggle - jQuery">
 
@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container js-navigation-space-hook">
-        <h1>Cargo Bay Toggle - jQuery</h1>
+        <h1>Cargo Bay Toggle - Vanilla</h1>
 
         <div class="js-toggle-container js-toggle--active">
             <button id="" class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs">
@@ -37,11 +37,10 @@
         </div>
     </div>
 
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-    <script src="../js/jquery.toggle.js"></script>
+    <script src="../js/vanilla.toggle.js"></script>
     <script>
-        $(function() {
+        document.addEventListener("DOMContentLoaded", function(event) {
             cargobay.toggle.init();
         });
     </script>

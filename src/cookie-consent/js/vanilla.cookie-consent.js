@@ -8,7 +8,7 @@
    Latest Chrome
    Latest FireFox
    Latest Safari
-   IE9 and up
+   IE10 and up
    ========================================================================== */
 
 var cargobay = cargobay || {};
