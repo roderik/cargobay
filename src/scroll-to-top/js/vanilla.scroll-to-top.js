@@ -32,7 +32,7 @@ cargobay.scrollToTop = (function(window, undefined) {
                 change = to - start;
                 currentTime = 0;
 
-                dataDuration = this.dataset.animationDuration;
+                dataDuration = this.getAttribute('data-animation-duration');
 
                 duration = (typeof dataDuration !== undefined && !isNaN(dataDuration)) ? dataDuration : defaultDuration;
 

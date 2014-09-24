@@ -1,6 +1,6 @@
 {
     "name": "cargobay",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "dependencies": {},
     "devDependencies": {
         "bower": "~1.3",
