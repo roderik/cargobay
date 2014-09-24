@@ -34,8 +34,6 @@ cargobay.hasSpace = (function(window, undefined) {
                 }
             });
 
-            console.log(spaceHook);
-
             toggleState(container, spaceHook, enoughSpaceWidth);
 
             window.addEventListener('resize', function(e) {
