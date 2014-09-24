@@ -127,7 +127,7 @@ cargobay.toggle = (function(window, undefined) {
         target.classList.remove(itemClassActive);
     };
 
-    hideFast = function($btn, $target) {
+    hideFast = function(btn, target) {
         btn.classList.remove(btnClassActive);
 
         target.style.height = 0;
