@@ -2,7 +2,7 @@
    Cookie Consent
 
    Initialize:
-   cargobay.cookieconsent.init();
+   cargobay.cookieConsent.init();
 
    Support:
    Latest Chrome
@@ -13,7 +13,7 @@
 
 var cargobay = cargobay || {};
 
-cargobay.cookieconsent = (function(window, undefined) {
+cargobay.cookieConsent = (function(window, undefined) {
 
     var init;
 
