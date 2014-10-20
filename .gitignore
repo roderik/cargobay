@@ -10,3 +10,4 @@ node_modules/
 .sass-cache/
 .temp/
 scss-lint-report.xml
+*.map
