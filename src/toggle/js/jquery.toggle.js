@@ -16,7 +16,7 @@ var cargobay = cargobay || {};
 
 cargobay.toggle = (function($, window, undefined) {
 
-    var init, toggle, show, hide, hideFast;
+    var init, toggle, show, hide;
 
     // Config
     var animationDuration = 150,
@@ -51,10 +51,6 @@ cargobay.toggle = (function($, window, undefined) {
                hide($this, $target);
 
             } else {
-                // Clear others
-                if($otherActiveItem[0]) {
-                    hideFast($('.' + btnClassActive), $otherActiveItem);
-                }
                 // Update target
                 show($this, $target, $targetContent, targetContentHeight);
             }
@@ -89,13 +85,6 @@ cargobay.toggle = (function($, window, undefined) {
             }
         });
 
-        $target.removeClass(itemClassActive);
-    };
-
-    hideFast = function($btn, $target) {
-        $btn.removeClass(btnClassActive);
-
-        $target.css('height', 0);
         $target.removeClass(itemClassActive);
     };
 

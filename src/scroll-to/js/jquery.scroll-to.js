@@ -29,16 +29,15 @@ cargobay.scrollTo = (function($, window, undefined) {
             var $this = $(this),
                 target = $this.attr('href'),
                 dataOffset = $this.data('offset'),
-                dataDuration = $this.data('animation-duration'),
-                targetTop;
+                dataDuration = $this.data('animation-duration');
 
             targetOffset = (typeof dataOffset !== undefined && !isNaN(dataOffset)) ? dataOffset : defaultOffset;
-
             duration = (typeof dataDuration !== undefined && !isNaN(dataDuration)) ? dataDuration : defaultDuration;
 
-            targetTop = $(target).offset().top - targetOffset;
-
-            $('html, body').animate({scrollTop: targetTop}, duration);
+            $(target).velocity('scroll', {
+                duration: duration,
+                offset: targetOffset
+            });
         });
     };
 

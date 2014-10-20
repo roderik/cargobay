@@ -16,7 +16,7 @@ var cargobay = cargobay || {};
 
 cargobay.toggle = (function(window, undefined) {
 
-    var init, findParent, addMultiEventistener, toggle, show, hide, hideFast;
+    var init, findParent, addMultiEventistener, toggle, show, hide;
 
     // Config
     var animationDuration = 150,
@@ -77,10 +77,6 @@ cargobay.toggle = (function(window, undefined) {
                    hide(btn, target);
 
                 } else {
-                    // Clear others
-                    if(otherActiveItem) {
-                        hideFast(('.' + btnClassActive), otherActiveItem);
-                    }
                     // Update target
                     show(this, target, targetContent, targetContentHeight);
                 }
@@ -124,13 +120,6 @@ cargobay.toggle = (function(window, undefined) {
             }
         });
 
-        target.classList.remove(itemClassActive);
-    };
-
-    hideFast = function(btn, target) {
-        btn.classList.remove(btnClassActive);
-
-        target.style.height = 0;
         target.classList.remove(itemClassActive);
     };
 
