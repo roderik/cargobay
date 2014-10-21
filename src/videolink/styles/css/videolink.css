@@ -35,6 +35,7 @@
 }
 
 .videolink__video-link__image {
+	display: block;
 	z-index: 0;
 	position: relative;
 	width: 100%;
