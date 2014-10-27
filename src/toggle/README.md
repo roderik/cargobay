@@ -34,7 +34,7 @@ Inside the button you can optionally have a set of icons to illustrate the state
             <span class="icon--chevron-up toggle-btn__icon--hide"></span>
         </button>
 
-        <div id="main-navigation--tabs" class="toggle-item toggle-item-demo" id="">
+        <div id="main-navigation--tabs" class="toggle-item toggle-item-demo">
             <div class="toggle-item__content">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam magni inventore nisi enim numquam, accusamus tempore voluptates possimus amet quod aspernatur ea, nulla, sapiente non facere quidem laudantium illo ipsam dolor aliquam dignissimos? Ad non, itaque blanditiis cum impedit, porro dolor nobis. Cupiditate debitis beatae labore, suscipit, dolorem nam omnis?
