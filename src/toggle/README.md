@@ -28,7 +28,7 @@ Inside the button you can optionally have a set of icons to illustrate the state
     <h1>Cargo Bay Toggle - jQuery</h1>
 
     <div class="js-toggle-container">
-        <button id="" class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs">
+        <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs">
             Toggle Me!
             <span class="icon--chevron-down toggle-btn__icon--show"></span>
             <span class="icon--chevron-up toggle-btn__icon--hide"></span>
