@@ -24,7 +24,7 @@ The **toggle-item** should be a wrapper for the **toggle-item__content** compone
 Inside the button you can optionally have a set of icons to illustrate the state of  the item you are hiding/showing. You can toggle these by applying the **toggle-btn__icon--show** (visible by default) and **toggle-btn__icon--hide** (shown when toggled) classes.
 
 ```html
-<div class="container js-navigation-space-hook">
+<div class="container">
     <h1>Cargo Bay Toggle - jQuery</h1>
 
     <div class="js-toggle-container">
