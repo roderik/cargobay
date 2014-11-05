@@ -27,7 +27,8 @@
         "gulp-concat": "2.3.4",
 
         "gulp-imagemin": "0.6.2",
-        "imagemin-svgo": "0.1.0"
+        "imagemin-svgo": "0.1.0",
+        "chalk": "0.5.1"
     },
     "engines": {
         "node": ">=0.10.0"
