@@ -40,20 +40,45 @@ cargobay.toggle = (function($, window, undefined) {
         }).on('touchend mouseup', function() {
             var $this = $(this),
                 $container = $this.parents('.' + containerClass),
-                $otherActiveItem = $container.find('.' + itemClassActive),
+                //$otherActiveItem = $container.find('.' + itemClassActive),
                 $target = $($this.data('target')),
                 $targetContent = $target.find('.' + itemContentClass),
                 targetContentHeight = $targetContent.height(),
-                currentTargetIsActive = $target.hasClass(itemClassActive);
+                currentTargetIsActive = $target.hasClass(itemClassActive),
+                hideOthers = $this.data('hide-others');
+
 
             if(currentTargetIsActive) {
                 // Target is active, so hide it
                hide($this, $target);
 
             } else {
-                // Clear others
-                if($otherActiveItem[0]) {
-                    hideFast($('.' + btnClassActive), $otherActiveItem);
+
+                // Check if others have to be cleared.
+                if(hideOthers){
+                    var ownTarget = $this.data('target');
+                    var currentLevel = $this.data('level');
+
+                    //console.log('Button triggers others on the same level to hide: ' + hideOthers);
+                    //console.log('CurrentLevel: ' + currentLevel);
+
+                    $.each($('.js-toggle-btn[data-level="'+currentLevel+'"]'), function(index, value){
+                        if(ownTarget !== $(value).data('target')){
+                            $value = $(value);
+                            var smTarget = $(value).data('target');
+                            console.log('Button on same level: ' + smTarget);
+
+                            console.log("All classes for same level button: \n" + $value.attr("class"));
+                            if($value.hasClass(btnClassActive)){
+                                console.log('Button is active; Hiding...');
+
+                                // Clear others
+                                hideFast($value, $(smTarget));
+                            }else{
+                                console.log('Button is not active...');
+                            }
+                        }
+                    });
                 }
 
                 // Update target
