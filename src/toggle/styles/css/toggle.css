@@ -34,3 +34,7 @@
 	overflow: hidden;
 }
 
+.toggle-item--active {
+	height: auto;
+}
+

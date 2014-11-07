@@ -18,7 +18,7 @@
         <h1>Cargo Bay Toggle - jQuery</h1>
 
         <h2>Single</h2>
-        <div class="js-toggle-container">
+        <div>
             <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs--1">
                 Toggle Me!
                 <span class="icon--chevron-down toggle-btn__icon--show"></span>
@@ -38,8 +38,8 @@
         </div>
 
         <h2>Embeded</h2>
-        <div class="js-toggle-container">
-            <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs--2">
+        <div>
+            <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs--2" data-level="0" data-hide-others="false">
                 Toggle Me!
                 <span class="icon--chevron-down toggle-btn__icon--show"></span>
                 <span class="icon--chevron-up toggle-btn__icon--hide"></span>
@@ -54,13 +54,12 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam magni inventore nisi enim numquam, accusamus tempore voluptates possimus amet quod aspernatur ea, nulla, sapiente non facere quidem laudantium illo ipsam dolor aliquam dignissimos? Ad non, itaque blanditiis cum impedit, porro dolor nobis. Cupiditate debitis beatae labore, suscipit, dolorem nam omnis?
                     </p>
                     <p>
-                        <div class="js-toggle-container">
-                            <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs--1__1">
+                        <div>
+                            <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs--1__1" data-level="1" data-hide-others="true">
                                 Toggle Me!
                                 <span class="icon--chevron-down toggle-btn__icon--show"></span>
                                 <span class="icon--chevron-up toggle-btn__icon--hide"></span>
                             </button>
-
                             <div id="main-navigation--tabs--1__1" class="toggle-item toggle-item-demo">
                                 <div class="toggle-item__content">
                                     <p>
@@ -71,7 +70,43 @@
                                     </p>
                                 </div>
                             </div>
+
+                            <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs--1__2" data-level="1" data-hide-others="true" data-duration="500">
+                                Toggle Me 2!
+                                <span class="icon--chevron-down toggle-btn__icon--show"></span>
+                                <span class="icon--chevron-up toggle-btn__icon--hide"></span>
+                            </button>
+                            <div id="main-navigation--tabs--1__2" class="toggle-item toggle-item-demo">
+                                <div class="toggle-item__content">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam magni inventore nisi enim numquam, accusamus tempore voluptates possimus amet quod aspernatur ea, nulla, sapiente non facere quidem laudantium illo ipsam dolor aliquam dignissimos? Ad non, itaque blanditiis cum impedit, porro dolor nobis. Cupiditate debitis beatae labore, suscipit, dolorem nam omnis?
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam magni inventore nisi enim numquam, accusamus tempore voluptates possimus amet quod aspernatur ea, nulla, sapiente non facere quidem laudantium illo ipsam dolor aliquam dignissimos? Ad non, itaque blanditiis cum impedit, porro dolor nobis. Cupiditate debitis beatae labore, suscipit, dolorem nam omnis?
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Open when loaded</h2>
+        <div>
+            <button class="js-toggle-btn toggle-button toggle-button-demo toggle-btn--active" data-target="#main-navigation--tabs--3">
+                Toggle Me!
+                <span class="icon--chevron-down toggle-btn__icon--show"></span>
+                <span class="icon--chevron-up toggle-btn__icon--hide"></span>
+            </button>
+
+            <div id="main-navigation--tabs--3" class="toggle-item toggle-item-demo toggle-item--active">
+                <div class="toggle-item__content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam magni inventore nisi enim numquam, accusamus tempore voluptates possimus amet quod aspernatur ea, nulla, sapiente non facere quidem laudantium illo ipsam dolor aliquam dignissimos? Ad non, itaque blanditiis cum impedit, porro dolor nobis. Cupiditate debitis beatae labore, suscipit, dolorem nam omnis?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam magni inventore nisi enim numquam, accusamus tempore voluptates possimus amet quod aspernatur ea, nulla, sapiente non facere quidem laudantium illo ipsam dolor aliquam dignissimos? Ad non, itaque blanditiis cum impedit, porro dolor nobis. Cupiditate debitis beatae labore, suscipit, dolorem nam omnis?
                     </p>
                 </div>
             </div>

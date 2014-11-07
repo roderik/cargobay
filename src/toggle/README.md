@@ -18,7 +18,13 @@ cargobay.toggle.init();
 
 This snippet is intended to quickly toggle the state of a component. (For example the opening/closing of a menu.)
 
-The class **js-toggle-button** is used as a javascript hook to identify the control button. This button also uses the **data-target** attribute to identify the element that it should control. Its value can be any css selector pointing to the **toggle-item**.
+The class **js-toggle-btn** is used as a javascript hook to identify the control button. This button also uses the **data-target** attribute to identify the element that it should control. Its value can be any css selector pointing to the **toggle-item**.
+Additional data attributes for the **js-toggle-btn** are the following:
+ 
+ - **data-hide-others**: Boolean to define if a click on this button should close other open items on the same level. Using this attribute also requires you to use the **data-level** attribute. ( See below ).
+ - **data-level**: Used with the **data-hide-others** attribute to identify buttons on the same level.
+ - **data-duration**: Use this attribute if you want to change the default duration of the animation. Time is in ms and can be unique for each button. ( Default is 150ms )
+
 The **toggle-item** should be a wrapper for the **toggle-item__content** component.
 
 Inside the button you can optionally have a set of icons to illustrate the state of  the item you are hiding/showing. You can toggle these by applying the **toggle-btn__icon--show** (visible by default) and **toggle-btn__icon--hide** (shown when toggled) classes.
@@ -27,7 +33,7 @@ Inside the button you can optionally have a set of icons to illustrate the state
 <div class="container">
     <h1>Cargo Bay Toggle - jQuery</h1>
 
-    <div class="js-toggle-container">
+    
         <button class="js-toggle-btn toggle-button toggle-button-demo" data-target="#main-navigation--tabs">
             Toggle Me!
             <span class="icon--chevron-down toggle-btn__icon--show"></span>
@@ -44,7 +50,6 @@ Inside the button you can optionally have a set of icons to illustrate the state
                 </p>
             </div>
         </div>
-    </div>
 </div>
 ```
 

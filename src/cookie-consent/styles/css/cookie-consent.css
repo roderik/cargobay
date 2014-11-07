@@ -13,14 +13,14 @@
 	text-align: center;
 	width: 100%;
 	padding: 10px 10px 0px 10px;
-	color: #fff;
+	color: white;
 	line-height: 1.7;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 13px;
 }
 
 .cookie-bar .cookie-bar__policy {
-	color: #fff;
+	color: white;
 	text-decoration: underline;
 }
 
