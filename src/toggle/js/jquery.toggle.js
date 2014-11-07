@@ -20,7 +20,7 @@ cargobay.toggle = (function($, window, undefined) {
 
     // Config
     var animationDuration = 150,
-        containerClass = 'js-toggle-container',
+        //containerClass = 'js-toggle-container',
         btnClass = 'js-toggle-btn',
         btnClassActive = 'toggle-btn--active',
         itemClassActive = 'toggle-item--active',
@@ -40,7 +40,6 @@ cargobay.toggle = (function($, window, undefined) {
         }).on('touchend mouseup', function() {
             var $this = $(this),
                 $container = $this.parents('.' + containerClass),
-                //$otherActiveItem = $container.find('.' + itemClassActive),
                 $target = $($this.data('target')),
                 $targetContent = $target.find('.' + itemContentClass),
                 targetContentHeight = $targetContent.height(),
@@ -59,23 +58,14 @@ cargobay.toggle = (function($, window, undefined) {
                     var ownTarget = $this.data('target');
                     var currentLevel = $this.data('level');
 
-                    //console.log('Button triggers others on the same level to hide: ' + hideOthers);
-                    //console.log('CurrentLevel: ' + currentLevel);
-
                     $.each($('.js-toggle-btn[data-level="'+currentLevel+'"]'), function(index, value){
                         if(ownTarget !== $(value).data('target')){
                             $value = $(value);
                             var smTarget = $(value).data('target');
-                            console.log('Button on same level: ' + smTarget);
 
-                            console.log("All classes for same level button: \n" + $value.attr("class"));
                             if($value.hasClass(btnClassActive)){
-                                console.log('Button is active; Hiding...');
-
                                 // Clear others
                                 hideFast($value, $(smTarget));
-                            }else{
-                                console.log('Button is not active...');
                             }
                         }
                     });
@@ -91,7 +81,6 @@ cargobay.toggle = (function($, window, undefined) {
     // Show an item
     show = function($btn, $target, $targetContent, height) {
         $btn.addClass(btnClassActive);
-        $target.addClass(itemClassActive);
 
         $target.velocity({
             height: height
@@ -99,6 +88,7 @@ cargobay.toggle = (function($, window, undefined) {
             duration: animationDuration,
             complete: function() {
                 $target.css('height', 'auto');
+                $target.addClass(itemClassActive);
             }
         });
     };
