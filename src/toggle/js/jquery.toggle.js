@@ -19,8 +19,8 @@ cargobay.toggle = (function($, window, undefined) {
     var init, toggle, show, hide, hideFast;
 
     // Config
-    var animationDuration = 150,
-        //containerClass = 'js-toggle-container',
+    var defaultAnimationDuration = 150,
+        animationDuration = 0,
         btnClass = 'js-toggle-btn',
         btnClassActive = 'toggle-btn--active',
         itemClassActive = 'toggle-item--active',
@@ -39,12 +39,14 @@ cargobay.toggle = (function($, window, undefined) {
             e.preventDefault();
         }).on('touchend mouseup', function() {
             var $this = $(this),
-                $container = $this.parents('.' + containerClass),
                 $target = $($this.data('target')),
                 $targetContent = $target.find('.' + itemContentClass),
                 targetContentHeight = $targetContent.height(),
                 currentTargetIsActive = $target.hasClass(itemClassActive),
                 hideOthers = $this.data('hide-others');
+
+            // Check if custom animation duration has been set.
+            animationDuration = ($this.data('duration') !== undefined) ? $this.data('duration') : defaultAnimationDuration;
 
 
             if(currentTargetIsActive) {
