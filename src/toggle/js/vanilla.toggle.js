@@ -20,8 +20,8 @@ cargobay.toggle = (function(window, undefined) {
     var init, findParent, addMultiEventistener, toggle, show, hide;
 
     // Config
-    var animationDuration = 150,
-        containerClass = 'js-toggle-container',
+    var defaultAnimationDuration = 150,
+        animationDuration = 0,
         btnClass = 'js-toggle-btn',
         btnClassActive = 'toggle-btn--active',
         itemClassActive = 'toggle-item--active',
@@ -57,6 +57,8 @@ cargobay.toggle = (function(window, undefined) {
                     currentTargetIsActive = target.classList.contains(itemClassActive),
                     hideOthers = btn.getAttribute('data-hide-others');
 
+                // Check animation speed.
+                animationDuration = (btn.getAttribute('data-duration') !== null) ? btn.getAttribute('data-duration') : defaultAnimationDuration;
 
                 if(currentTargetIsActive) {
                     // Target is active, so hide it
@@ -90,7 +92,6 @@ cargobay.toggle = (function(window, undefined) {
     // Show an item
     show = function(btn, target, targetContent, height) {
         btn.classList.add(btnClassActive);
-        target.classList.add(itemClassActive);
 
         Velocity({
             elements: target,
@@ -100,6 +101,7 @@ cargobay.toggle = (function(window, undefined) {
             options: {
                 duration: animationDuration,
                 complete: function() {
+                    target.classList.add(itemClassActive);
                     target.style.height = 'auto';
                 }
             }
