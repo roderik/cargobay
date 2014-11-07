@@ -14,6 +14,7 @@
 
 var cargobay = cargobay || {};
 
+
 cargobay.toggle = (function(window, undefined) {
 
     var init, findParent, addMultiEventistener, toggle, show, hide;
@@ -33,7 +34,7 @@ cargobay.toggle = (function(window, undefined) {
     };
 
 
-    // Find parent of a element with a certain class
+    // Find parent of an element with a certain class
     findParent = function(el) {
         var iNode = el.parentNode;
 
@@ -70,13 +71,36 @@ cargobay.toggle = (function(window, undefined) {
                     target = container.querySelectorAll(btn.getAttribute('data-target'))[0],
                     targetContent = target.querySelectorAll('.' + itemContentClass)[0],
                     targetContentHeight = targetContent.offsetHeight,
-                    currentTargetIsActive = target.classList.contains(itemClassActive);
+                    currentTargetIsActive = target.classList.contains(itemClassActive),
+                    hideOthers = btn.getAttribute('data-hide-others');
+
 
                 if(currentTargetIsActive) {
                     // Target is active, so hide it
                    hide(btn, target);
 
                 } else {
+
+                    // Check if the others have to be cleared.
+                    if(hideOthers){
+                        var ownTarget = btn.getAttribute('data-target');
+                        var currentLevel = btn.getAttribute('data-level');
+
+                        [].forEach.call( container.querySelectorAll('.' + btnClass + '[data-level="' + currentLevel + '"]'), function(btn) {
+
+                            var btnTarget  = btn.getAttribute('data-target');
+
+                            if(ownTarget !== btnTarget){
+
+                                console.log('button target: ' + btnTarget);
+
+                                if(btn.classList.contains(btnClassActive)){
+                                    hideFast(btn, container.querySelectorAll(btnTarget)[0]);
+                                }
+                            }
+                        });
+                    }
+
                     // Update target
                     show(this, target, targetContent, targetContentHeight);
                 }
@@ -120,6 +144,16 @@ cargobay.toggle = (function(window, undefined) {
             }
         });
 
+        target.classList.remove(itemClassActive);
+    };
+
+    // Quickly hide another open item on the same level when hide-others is true.
+    hideFast = function(btn, target) {
+        console.log(target);
+
+        btn.classList.remove(btnClassActive);
+
+        target.style.height = 0;
         target.classList.remove(itemClassActive);
     };
 

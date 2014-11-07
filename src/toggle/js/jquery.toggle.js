@@ -60,7 +60,7 @@ cargobay.toggle = (function($, window, undefined) {
                     var ownTarget = $this.data('target');
                     var currentLevel = $this.data('level');
 
-                    $.each($('.js-toggle-btn[data-level="'+currentLevel+'"]'), function(index, value){
+                    $.each($('.'+ btnClass +'[data-level="' + currentLevel + '"]'), function(index, value){
                         if(ownTarget !== $(value).data('target')){
                             $value = $(value);
                             var smTarget = $(value).data('target');
