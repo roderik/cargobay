@@ -33,21 +33,6 @@ cargobay.toggle = (function(window, undefined) {
         toggle();
     };
 
-
-    // Find parent of an element with a certain class
-    findParent = function(el) {
-        var iNode = el.parentNode;
-
-        while(iNode){
-            if(iNode.classList.contains(containerClass)) {
-                return iNode;
-            }
-
-            iNode = iNode.parentNode;
-        }
-    };
-
-
     // Add multiple listeners
     addMultiEventistener = function(el, s, fn) {
         var evts = s.split(' ');
@@ -66,9 +51,7 @@ cargobay.toggle = (function(window, undefined) {
             });
 
             addMultiEventistener(btn, 'touchend mouseup', function(e){
-                var container = findParent(btn),
-                    otherActiveItem = container.querySelectorAll('.' + itemClassActive)[0],
-                    target = container.querySelectorAll(btn.getAttribute('data-target'))[0],
+                var target = document.querySelectorAll(btn.getAttribute('data-target'))[0],
                     targetContent = target.querySelectorAll('.' + itemContentClass)[0],
                     targetContentHeight = targetContent.offsetHeight,
                     currentTargetIsActive = target.classList.contains(itemClassActive),
@@ -86,16 +69,11 @@ cargobay.toggle = (function(window, undefined) {
                         var ownTarget = btn.getAttribute('data-target');
                         var currentLevel = btn.getAttribute('data-level');
 
-                        [].forEach.call( container.querySelectorAll('.' + btnClass + '[data-level="' + currentLevel + '"]'), function(btn) {
-
+                        [].forEach.call( document.querySelectorAll('.' + btnClass + '[data-level="' + currentLevel + '"]'), function(btn) {
                             var btnTarget  = btn.getAttribute('data-target');
-
                             if(ownTarget !== btnTarget){
-
-                                console.log('button target: ' + btnTarget);
-
                                 if(btn.classList.contains(btnClassActive)){
-                                    hideFast(btn, container.querySelectorAll(btnTarget)[0]);
+                                    hideFast(btn, document.querySelectorAll(btnTarget)[0]);
                                 }
                             }
                         });
@@ -149,8 +127,6 @@ cargobay.toggle = (function(window, undefined) {
 
     // Quickly hide another open item on the same level when hide-others is true.
     hideFast = function(btn, target) {
-        console.log(target);
-
         btn.classList.remove(btnClassActive);
 
         target.style.height = 0;
