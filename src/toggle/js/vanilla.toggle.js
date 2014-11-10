@@ -14,13 +14,14 @@
 
 var cargobay = cargobay || {};
 
+
 cargobay.toggle = (function(window, undefined) {
 
     var init, findParent, addMultiEventistener, toggle, show, hide;
 
     // Config
-    var animationDuration = 150,
-        containerClass = 'js-toggle-container',
+    var defaultAnimationDuration = 150,
+        animationDuration = 0,
         btnClass = 'js-toggle-btn',
         btnClassActive = 'toggle-btn--active',
         itemClassActive = 'toggle-item--active',
@@ -31,21 +32,6 @@ cargobay.toggle = (function(window, undefined) {
     init = function() {
         toggle();
     };
-
-
-    // Find parent of a element with a certain class
-    findParent = function(el) {
-        var iNode = el.parentNode;
-
-        while(iNode){
-            if(iNode.classList.contains(containerClass)) {
-                return iNode;
-            }
-
-            iNode = iNode.parentNode;
-        }
-    };
-
 
     // Add multiple listeners
     addMultiEventistener = function(el, s, fn) {
@@ -65,18 +51,36 @@ cargobay.toggle = (function(window, undefined) {
             });
 
             addMultiEventistener(btn, 'touchend mouseup', function(e){
-                var container = findParent(btn),
-                    otherActiveItem = container.querySelectorAll('.' + itemClassActive)[0],
-                    target = container.querySelectorAll(btn.getAttribute('data-target'))[0],
+                var target = document.querySelectorAll(btn.getAttribute('data-target'))[0],
                     targetContent = target.querySelectorAll('.' + itemContentClass)[0],
                     targetContentHeight = targetContent.offsetHeight,
-                    currentTargetIsActive = target.classList.contains(itemClassActive);
+                    currentTargetIsActive = target.classList.contains(itemClassActive),
+                    hideOthers = btn.getAttribute('data-hide-others');
+
+                // Check animation speed.
+                animationDuration = (btn.getAttribute('data-duration') !== null) ? btn.getAttribute('data-duration') : defaultAnimationDuration;
 
                 if(currentTargetIsActive) {
                     // Target is active, so hide it
                    hide(btn, target);
 
                 } else {
+
+                    // Check if the others have to be cleared.
+                    if(hideOthers){
+                        var ownTarget = btn.getAttribute('data-target');
+                        var currentLevel = btn.getAttribute('data-level');
+
+                        [].forEach.call( document.querySelectorAll('.' + btnClass + '[data-level="' + currentLevel + '"]'), function(btn) {
+                            var btnTarget  = btn.getAttribute('data-target');
+                            if(ownTarget !== btnTarget){
+                                if(btn.classList.contains(btnClassActive)){
+                                    hideFast(btn, document.querySelectorAll(btnTarget)[0]);
+                                }
+                            }
+                        });
+                    }
+
                     // Update target
                     show(this, target, targetContent, targetContentHeight);
                 }
@@ -88,7 +92,6 @@ cargobay.toggle = (function(window, undefined) {
     // Show an item
     show = function(btn, target, targetContent, height) {
         btn.classList.add(btnClassActive);
-        target.classList.add(itemClassActive);
 
         Velocity({
             elements: target,
@@ -98,6 +101,7 @@ cargobay.toggle = (function(window, undefined) {
             options: {
                 duration: animationDuration,
                 complete: function() {
+                    target.classList.add(itemClassActive);
                     target.style.height = 'auto';
                 }
             }
@@ -120,6 +124,14 @@ cargobay.toggle = (function(window, undefined) {
             }
         });
 
+        target.classList.remove(itemClassActive);
+    };
+
+    // Quickly hide another open item on the same level when hide-others is true.
+    hideFast = function(btn, target) {
+        btn.classList.remove(btnClassActive);
+
+        target.style.height = 0;
         target.classList.remove(itemClassActive);
     };
 

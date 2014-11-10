@@ -7,6 +7,7 @@ var gulp = require('gulp');
 // Load Gulp plugins
 var plugins = require('gulp-load-plugins')();
 
+var chalk = require('chalk');
 
 // Config
 var basePath = './src';
@@ -87,11 +88,15 @@ gulp.task('watch', function () {
 
     // Scripts
     gulp.watch(cargobay.js, ['scripts']);
+
+    console.log(chalk.green('Build.complete!'));
 });
 
 
 // Build
-gulp.task('build', ['styles', 'scripts']);
+gulp.task('build', ['styles', 'scripts'], function(){
+    console.log(chalk.green('Build complete!'));
+});
 
 
 // Default
