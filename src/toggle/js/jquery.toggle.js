@@ -16,11 +16,11 @@ var cargobay = cargobay || {};
 
 cargobay.toggle = (function($, window, undefined) {
 
-    var init, toggle, show, hide;
+    var init, toggle, show, hide, hideFast;
 
     // Config
-    var animationDuration = 150,
-        containerClass = 'js-toggle-container',
+    var defaultAnimationDuration = 150,
+        animationDuration = 0,
         btnClass = 'js-toggle-btn',
         btnClassActive = 'toggle-btn--active',
         itemClassActive = 'toggle-item--active',
@@ -39,18 +39,40 @@ cargobay.toggle = (function($, window, undefined) {
             e.preventDefault();
         }).on('touchend mouseup', function() {
             var $this = $(this),
-                $container = $this.parents('.' + containerClass),
-                $otherActiveItem = $container.find('.' + itemClassActive),
                 $target = $($this.data('target')),
                 $targetContent = $target.find('.' + itemContentClass),
                 targetContentHeight = $targetContent.height(),
-                currentTargetIsActive = $target.hasClass(itemClassActive);
+                currentTargetIsActive = $target.hasClass(itemClassActive),
+                hideOthers = $this.data('hide-others');
+
+            // Check if custom animation duration has been set.
+            animationDuration = ($this.data('duration') !== undefined) ? $this.data('duration') : defaultAnimationDuration;
+
 
             if(currentTargetIsActive) {
                 // Target is active, so hide it
                hide($this, $target);
 
             } else {
+
+                // Check if others have to be cleared.
+                if(hideOthers){
+                    var ownTarget = $this.data('target');
+                    var currentLevel = $this.data('level');
+
+                    $.each($('.'+ btnClass +'[data-level="' + currentLevel + '"]'), function(index, value){
+                        if(ownTarget !== $(value).data('target')){
+                            $value = $(value);
+                            var smTarget = $(value).data('target');
+
+                            if($value.hasClass(btnClassActive)){
+                                // Clear others
+                                hideFast($value, $(smTarget));
+                            }
+                        }
+                    });
+                }
+
                 // Update target
                 show($this, $target, $targetContent, targetContentHeight);
             }
@@ -61,7 +83,6 @@ cargobay.toggle = (function($, window, undefined) {
     // Show an item
     show = function($btn, $target, $targetContent, height) {
         $btn.addClass(btnClassActive);
-        $target.addClass(itemClassActive);
 
         $target.velocity({
             height: height
@@ -69,6 +90,7 @@ cargobay.toggle = (function($, window, undefined) {
             duration: animationDuration,
             complete: function() {
                 $target.css('height', 'auto');
+                $target.addClass(itemClassActive);
             }
         });
     };
@@ -88,6 +110,12 @@ cargobay.toggle = (function($, window, undefined) {
         $target.removeClass(itemClassActive);
     };
 
+    hideFast = function($btn, $target) {
+        $btn.removeClass(btnClassActive);
+
+        $target.css('height', 0);
+        $target.removeClass(itemClassActive);
+    };
 
     return {
         init: init
