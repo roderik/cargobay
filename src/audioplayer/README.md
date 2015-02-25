@@ -31,7 +31,7 @@ $('.js-audio-player').audioPlayer({
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-preventMixedPlay | boolean | false | Disables simultaneous play of audioplayers on same page
+preventMixedPlay | boolean | false | Prevents simultaneous play of audioplayers on same page
 
 ### Usage
 The class **js-audio-player** is used as javascript hook.
