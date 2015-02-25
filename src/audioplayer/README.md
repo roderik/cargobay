@@ -22,8 +22,16 @@
 
 ### Initialise
 ```javascript
-$('.js-audio-player').audioPlayer();
+$('.js-audio-player').audioPlayer({
+    preventMixedPlay : true
+});
 ```
+
+#### Settings
+
+Option | Type | Default | Description
+------ | ---- | ------- | -----------
+preventMixedPlay | boolean | false | Prevents simultaneous play of audioplayers on same page
 
 ### Usage
 The class **js-audio-player** is used as javascript hook.
