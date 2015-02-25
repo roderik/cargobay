@@ -43,7 +43,7 @@
         return supported;
     };
 
-    $.fn.audioPlayer = function() {
+    $.fn.audioPlayer = function(options) {
         var classPrefix = 'audioplayer',
             cssClass = {},
             cssClassSub = {
@@ -62,13 +62,33 @@
                 noVolume:       '--novolume',
                 mute:           '--muted',
                 mini:           '--mini'
-            };
+            },
+            defaults = {
+                preventMixedPlay:    false
+            },
+            settings = $.extend({}, defaults, options),
+            pauseOtherAudio;
 
         for(var subName in cssClassSub) {
             if(cssClassSub.hasOwnProperty(subName)) {
                 cssClass[subName] = classPrefix + cssClassSub[subName];
             }
         }
+
+        pauseOtherAudio = function(thePlayer) {
+            $('.' + classPrefix).not(thePlayer).each(function() {
+
+                var player = $(this),
+                    audio  = player.find('audio');
+
+                audio = audio.get(0);
+
+                if(player.hasClass(cssClass.playing)) {
+                    player.removeClass(cssClass.playing);
+                    audio.pause();
+                }
+            });
+        };
 
         this.each(function() {
             if($(this).prop('tagName').toLowerCase() != 'audio') {
@@ -224,6 +244,9 @@
                 } else {
                     thePlayer.addClass(cssClass.playing);
                     if (isSupport) {
+                        if (settings.preventMixedPlay) {
+                            pauseOtherAudio(thePlayer);
+                        }
                         theAudio.play();
                     } else {
                         theAudio.Play();
