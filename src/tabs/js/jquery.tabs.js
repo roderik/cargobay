@@ -16,19 +16,12 @@ var cargobay = cargobay || {};
 
 cargobay.tabs = (function($, window, undefined) {
 
-    var init, activateTabs, updatePanes;
+    var activateTabs, updatePanes;
 
     // Config
     var tabClass = 'js-tab',
         tabClassActive = 'tab--active',
         paneClassActive = 'tab-pane--active';
-
-
-    // Init
-    init = function() {
-        activateTabs();
-    };
-
 
     // Main tabs function
     activateTabs = function() {
@@ -36,10 +29,11 @@ cargobay.tabs = (function($, window, undefined) {
             e.preventDefault();
         }).on('touchend mouseup', function() {
             var $this = $(this),
-                $target = $this.data('target') ? $($this.data('target')) : $($this.attr('href')),
+                dataTarget = $this.data('target'),
+                $target = dataTarget ? $(dataTarget) : $($this.attr('href')),
                 currentTargetIsActive = $target.hasClass(tabClassActive);
 
-            if(currentTargetIsActive) {
+            if (currentTargetIsActive) {
                 // Target is active, so return
                 return false;
 
@@ -61,7 +55,7 @@ cargobay.tabs = (function($, window, undefined) {
     };
 
     return {
-        init: init
+        init: activateTabs
     };
 
 }(jQuery, window));

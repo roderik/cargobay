@@ -16,40 +16,26 @@ var cargobay = cargobay || {};
 
 cargobay.tabs = (function(window, undefined) {
 
-    var init, activateTabs, updatePanes;
+    var activateTabs, updatePanes, addMultiEventistener;
 
     // Config
     var tabClass = 'js-tab',
         tabClassActive = 'tab--active',
         paneClassActive = 'tab-pane--active';
 
-
-    // Init
-    init = function() {
-        activateTabs();
-    };
-
-    // Add multiple listeners
-    addMultiEventistener = function(el, s, fn) {
-        var evts = s.split(' ');
-
-        for (var i=0, iLen=evts.length; i<iLen; i++) {
-            el.addEventListener(evts[i], fn, false);
-        }
-    };
-
     // Main tabs function
     activateTabs = function() {
         [].forEach.call(document.querySelectorAll('.' + tabClass), function(tab) {
-            addMultiEventistener(tab, 'click touchstart mousedown', function(e){
+            addMultiEventistener(tab, 'click touchstart mousedown', function(e) {
                 e.preventDefault();
             });
 
-            addMultiEventistener(tab, 'touchend mouseup', function(e){
-                var target = tab.getAttribute('data-target') ? document.querySelectorAll(tab.getAttribute('data-target'))[0] : document.querySelectorAll(tab.getAttribute('href'))[0],
+            addMultiEventistener(tab, 'touchend mouseup', function(e) {
+                var dataTarget = tab.getAttribute('data-target'),
+                    target = dataTarget ? document.querySelectorAll(dataTarget)[0] : document.querySelectorAll(tab.getAttribute('href'))[0],
                     currentTargetIsActive = target.classList.contains(tabClassActive);
 
-                if(currentTargetIsActive) {
+                if (currentTargetIsActive) {
                     // Target is active, so return
                     return false;
 
@@ -72,8 +58,17 @@ cargobay.tabs = (function(window, undefined) {
         target.classList.add(paneClassActive);
     };
 
+    // Add multiple listeners
+    addMultiEventistener = function(el, s, fn) {
+        var evts = s.split(' ');
+
+        for (var i=0, iLen=evts.length; i<iLen; i++) {
+            el.addEventListener(evts[i], fn, false);
+        }
+    };
+
     return {
-        init: init
+        init: activateTabs
     };
 
 }(window));
