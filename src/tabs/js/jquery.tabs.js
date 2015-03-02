@@ -32,13 +32,13 @@ cargobay.tabs = (function($, window, undefined) {
     };
 
 
-    // Main toggle function
+    // Main tabs function
     activateTabs = function() {
         $('.' + tabClass).on('click touchstart mousedown', function(e) {
             e.preventDefault();
         }).on('touchend mouseup', function() {
             var $this = $(this),
-                $target = ($this.data('target') !== undefined) ? $($this.data('target')) : $($this.children('a').first().attr('href')),
+                $target = ($this.data('target') !== undefined) ? $($this.data('target')) : $($this.children().first().attr('href')),
                 currentTargetIsActive = $target.hasClass(tabClassActive);
 
             console.log($this.attr('href'));
@@ -48,12 +48,12 @@ cargobay.tabs = (function($, window, undefined) {
 
 
             if(currentTargetIsActive) {
-               // Target is active, so return
-               return false;
+                // Target is active, so return
+                return false;
 
             } else {
                 // Update tabs
-                $this.siblings().removeClass(tabClassActive);
+                $this.siblings(tabClassActive).removeClass(tabClassActive);
                 $this.addClass(tabClassActive);
 
                 // Update panes
