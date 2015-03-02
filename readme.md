@@ -12,6 +12,7 @@ Cargo Bay is a html, scss/css, js component library with some useful and commonl
 - [Responsive audioplayer](src/audioplayer/)
 - [Videolink](src/videolink/)
 - [Full image background fallack](src/full-img-bg/)
+- [Tabs](src/tabs/)
 
 
 
