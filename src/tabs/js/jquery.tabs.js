@@ -38,10 +38,8 @@ cargobay.tabs = (function($, window, undefined) {
             e.preventDefault();
         }).on('touchend mouseup', function() {
             var $this = $(this),
-                $target = ($this.data('target') !== undefined) ? $($this.data('target')) : $($this.children().first().attr('href')),
+                $target = $this.data('target') ? $($this.data('target')) : $($this.attr('href')),
                 currentTargetIsActive = $target.hasClass(tabClassActive);
-
-            console.log($this.attr('href'));
 
             // Check if custom animation duration has been set.
             animationDuration = ($this.data('duration') !== undefined) ? $this.data('duration') : defaultAnimationDuration;
