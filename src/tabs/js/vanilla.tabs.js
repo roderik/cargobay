@@ -19,9 +19,7 @@ cargobay.tabs = (function(window, undefined) {
     var init, activateTabs, updatePanes;
 
     // Config
-    var defaultAnimationDuration = 150,
-        animationDuration = 0,
-        tabClass = 'js-tab',
+    var tabClass = 'js-tab',
         tabClassActive = 'tab--active',
         paneClassActive = 'tab-pane--active';
 
@@ -50,9 +48,6 @@ cargobay.tabs = (function(window, undefined) {
             addMultiEventistener(tab, 'touchend mouseup', function(e){
                 var target = tab.getAttribute('data-target') ? document.querySelectorAll(tab.getAttribute('data-target'))[0] : document.querySelectorAll(tab.getAttribute('href'))[0],
                     currentTargetIsActive = target.classList.contains(tabClassActive);
-
-                // Check if custom animation duration has been set.
-                animationDuration = (tab.getAttribute('data-duration') !== null) ? tab.getAttribute('data-duration') : defaultAnimationDuration;
 
                 if(currentTargetIsActive) {
                     // Target is active, so return
