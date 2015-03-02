@@ -15,7 +15,7 @@ var cargobay = cargobay || {};
 
 cargobay.hasSpace = (function(window, undefined) {
 
-    var init, calcSpace, toggleState,
+    var init, calcSpace, toggleState, debounce,
         containerClass = '.js-has-space',
         containerItemClass = '.js-has-space__item';
 
@@ -24,6 +24,8 @@ cargobay.hasSpace = (function(window, undefined) {
     };
 
     calcSpace = function() {
+        var _toggleStateDebounced = debounce(toggleState, 250);
+
         [].forEach.call( document.querySelectorAll(containerClass), function(container) {
             var spaceHook = container.getAttribute('data-space-hook-target'),
                 enoughSpaceWidth = 0;
@@ -37,7 +39,7 @@ cargobay.hasSpace = (function(window, undefined) {
             toggleState(container, spaceHook, enoughSpaceWidth);
 
             window.addEventListener('resize', function(e) {
-                toggleState(container, spaceHook, enoughSpaceWidth);
+                _toggleStateDebounced(container, spaceHook, enoughSpaceWidth);
             });
         });
     };
@@ -55,6 +57,25 @@ cargobay.hasSpace = (function(window, undefined) {
             currentContainer.classList.add('has-space--space');
             currentContainer.classList.remove('has-space--no-space');
         }
+    };
+
+    debounce = function(func, wait, immediate){
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) {
+                    func.apply(context, args);
+                }
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) {
+                func.apply(context, args);
+            }
+        };
     };
 
     return {
