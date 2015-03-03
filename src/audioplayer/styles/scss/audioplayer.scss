@@ -45,6 +45,10 @@
 }
 .audioplayer__playpause__icon-play {
     display: block;
+
+    &:before {
+        margin-left: .2em;
+    }
 }
 .audioplayer__playpause__icon-pause {
     display: none;
