@@ -19,8 +19,8 @@ cargobay.tabs = (function(window, undefined) {
     var activateTabs, updatePanes, addMultiEventistener;
 
     // Config
-    var tabClass = 'js-tab',
-        tabClassActive = 'tab--active',
+    var tabClass = 'js-tab-link',
+        tabClassActive = 'tab-link--active',
         paneClassActive = 'tab-pane--active';
 
     // Main tabs function
@@ -44,7 +44,7 @@ cargobay.tabs = (function(window, undefined) {
                     // Update tabs
                     tab.parentNode.querySelectorAll('.' + tabClassActive)[0].classList.remove(tabClassActive);
                     tab.classList.add(tabClassActive);
-                    
+
                     // Update panes
                     updatePanes(target);
                 }

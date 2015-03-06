@@ -19,8 +19,8 @@ cargobay.tabs = (function($, window, undefined) {
     var activateTabs, updatePanes;
 
     // Config
-    var tabClass = 'js-tab',
-        tabClassActive = 'tab--active',
+    var tabClass = 'js-tab-link',
+        tabClassActive = 'tab-link--active',
         paneClassActive = 'tab-pane--active';
 
     // Main tabs function
