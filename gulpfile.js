@@ -10,7 +10,7 @@ var plugins = require('gulp-load-plugins')();
 var chalk = require('chalk');
 
 // Config
-var basePath = './src';
+var basePath = 'src';
 var cargobay = {
     scss : basePath + '/**/*/styles/scss/**/*.scss',
     js : [basePath + '/**/*/js/**/*.js', '!' + basePath + '/**/*/js/**/*.min.js'] // ! in front of a path excludes that path/those files. This is to prevent double minification.
