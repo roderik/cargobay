@@ -1,4 +1,4 @@
-## Cargo Bay _v0.7.0_
+## Cargo Bay _v0.7.1_
 
 Cargo Bay is a utility library with some useful and commonly used components and snippets.
 
