@@ -28,7 +28,13 @@ cargobay.sidebarToggle = (function(window, undefined) {
             });
 
             addMultiEventistener(btn, 'touchend mouseup', function(e) {
-
+                var btn = this,
+                    container = btn.getAttribute('data-container'),
+                    content = btn.getAttribute('data-content'),
+                    sidebar = btn.getAttribute('data-sidebar'),
+                    position = btn.getAttribute('data-position'),
+                    preventOverflow = btn.getAttribute('data-prevent-overflow'),
+                    duration = btn.getAttribute('data-duration');
             });
         });
     };
