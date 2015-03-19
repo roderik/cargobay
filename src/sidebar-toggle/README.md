@@ -17,13 +17,13 @@ cargobay.sidebarToggle.init();
 
 This add-on allows you to easely show and hide a hidden sidebar. You can place the sidebar at any side (top/right/bottom/left).
 
-##### Js-classes
+#### Js-classes
 The class **js-sidebar-toggle__toggle-btn** is used as a javascript hook to identify the toggle-button of the sidebar.
 
-##### Css-classes
+#### Css-classes
 The class **sidebar-toggle-container** is used to identify the container (used for disabling overflow), the class **sidebar-toggle__side-bar** is used to identify the sidebar and **sidebar-toggle__content** is used to identify your content wrapper. **sidebar-toggle__sidebar--[top|right|bottom|left]** is used to place your sidebar on a specific position. **sidebar-toggle-container--prevent-overflow** prevents overflow of your container when sidebar is shown.
 
-##### Config
+#### Config
 All the config is done on the button with data-attributes:
 - **data-content**: Put a id or class here to identify your content
 - **data-sidebar**: Put a id or class here to identify your sidebar
@@ -32,7 +32,7 @@ All the config is done on the button with data-attributes:
 - **data-prevent-overflow**: [true|false], prevent overflow on container when sidebar is shown?
 - **data-duration**: Duration of animation
 
-##### Available SCSS-variables
+#### Available SCSS-variables
 **$sidebar--left__width:** 60%!default;<br>
 **$sidebar--left__max-width:** 30rem!default;
 
@@ -45,7 +45,7 @@ All the config is done on the button with data-attributes:
 **$sidebar--bottom__height:** auto!default;<br>
 **$sidebar--bottom__max-height:** 80%!default;
 
-##### Html-example
+#### Html-example
 
 ```html
 <!-- Container -->
