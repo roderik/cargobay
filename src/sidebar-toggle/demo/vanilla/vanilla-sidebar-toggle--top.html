@@ -13,10 +13,14 @@
     <link rel="stylesheet" href="../../styles/css/sidebar-toggle.css">
 </head>
 <body id="sidebar-toggle-container" class="sidebar-toggle-container">
-    <aside id="sidebar-toggle__sidebar" class="sidebar-toggle__sidebar sidebar-toggle__sidebar--right" style="background: #ccc; padding: 2em;">
+    <aside id="sidebar-toggle__sidebar" class="sidebar-toggle__sidebar sidebar-toggle__sidebar--top" style="background: #ccc; padding: 2em;">
+        <button type="button" class="js-sidebar-toggle__toggle-btn sidebar-toggle__toggle-btn" data-content="#sidebar-toggle__content" data-sidebar="#sidebar-toggle__sidebar" data-container="#sidebar-toggle-container" data-position="top" data-prevent-overflow="true" data-duration="300">
+            X Close
+        </button>
+
         <header>
             <h1>
-                Vanilla Sidebar Toggle - Right
+                Vanilla Sidebar Toggle - Top
             </h1>
         </header>
 
@@ -57,8 +61,7 @@
 
     <main role="main" id="sidebar-toggle__content" class="sidebar-toggle__content">
         <article class="container" style="padding: 2em 0 4em;">
-
-            <button type="button" class="js-sidebar-toggle__toggle-btn sidebar-toggle__toggle-btn pull-right" data-content="#sidebar-toggle__content" data-sidebar="#sidebar-toggle__sidebar" data-container="#sidebar-toggle-container" data-position="right" data-prevent-overflow="false" data-duration="300">
+            <button type="button" class="js-sidebar-toggle__toggle-btn sidebar-toggle__toggle-btn" data-content="#sidebar-toggle__content" data-sidebar="#sidebar-toggle__sidebar" data-container="#sidebar-toggle-container" data-position="top" data-prevent-overflow="true" data-duration="300">
                 &#9776; Menu
             </button>
 
@@ -136,6 +139,7 @@
                 </p>
             </section>
         </article>
+
     </main>
 
     <script src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>

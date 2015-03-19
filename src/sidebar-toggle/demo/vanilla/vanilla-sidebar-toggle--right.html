@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cargo Bay Sidebar Toggle - Vanilla</title>
+    <title>Cargo Bay Sidebar Toggle - jQuery</title>
 
-    <meta name="description" content="Cargo Bay Sidebar Toggle - Vanilla">
+    <meta name="description" content="Cargo Bay Sidebar Toggle - jQuery">
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../styles/css/sidebar-toggle.css">
@@ -16,7 +16,7 @@
     <aside id="sidebar-toggle__sidebar" class="sidebar-toggle__sidebar sidebar-toggle__sidebar--right" style="background: #ccc; padding: 2em;">
         <header>
             <h1>
-                Vanilla Sidebar Toggle - Right
+                jQuery Sidebar Toggle - Right
             </h1>
         </header>
 
@@ -136,13 +136,14 @@
                 </p>
             </section>
         </article>
+
     </main>
 
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
-    <script src="../../js/vanilla.sidebar-toggle.js"></script>
-
+    <script src="../../js/jquery.sidebar-toggle.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        $(function() {
             cargobay.sidebarToggle.init();
         });
     </script>

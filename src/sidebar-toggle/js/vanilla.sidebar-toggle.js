@@ -23,18 +23,114 @@ cargobay.sidebarToggle = (function(window, undefined) {
 
     toggle = function() {
         [].forEach.call( document.querySelectorAll('.js-sidebar-toggle__toggle-btn'), function(btn) {
-            addMultiEventistener(btn, 'click touchstart mousedown', function(e) {
+            btn.addEventListener('click', function(e) {
                 e.preventDefault();
-            });
 
-            addMultiEventistener(btn, 'touchend mouseup', function(e) {
                 var btn = this,
-                    container = btn.getAttribute('data-container'),
-                    content = btn.getAttribute('data-content'),
-                    sidebar = btn.getAttribute('data-sidebar'),
+                    container = document.querySelector(btn.getAttribute('data-container')),
+                    content = document.querySelector(btn.getAttribute('data-content')),
+                    sidebar = document.querySelector(btn.getAttribute('data-sidebar')),
                     position = btn.getAttribute('data-position'),
                     preventOverflow = btn.getAttribute('data-prevent-overflow'),
                     duration = btn.getAttribute('data-duration');
+
+
+                // Set derection variables
+                var aniSidebarOpen = {},
+                    aniSidebarClose = {},
+                    aniContainerOpen = {},
+                    aniContainerClose = {};
+
+                var sidebarWidth, sidebarHeight;
+
+                if(position === 'left') {
+                    sidebarWidth = sidebar.offsetWidth;
+
+                    aniSidebarOpen.translateX = ['0', '-100%'];
+                    aniSidebarClose.translateX = ['-100%', '0'];
+
+                    aniContainerOpen.translateX = [sidebarWidth, '0'];
+                    aniContainerClose.translateX = ['0', sidebarWidth];
+                }
+                if(position === 'right') {
+                    sidebarWidth = sidebar.offsetWidth;
+
+                    aniSidebarOpen.translateX = ['0', '100%'];
+                    aniSidebarClose.translateX = ['100%', '0'];
+
+                    aniContainerOpen.translateX = ['-' + sidebarWidth, '0'];
+                    aniContainerClose.translateX = ['0', '-' + sidebarWidth];
+                }
+                if(position === 'top') {
+                    sidebarHeight = sidebar.offsetHeight;
+
+                    aniSidebarOpen.translateY = ['0', '-100%'];
+                    aniSidebarClose.translateY = ['-100%', '0'];
+
+                    aniContainerOpen.translateY = [sidebarHeight, '0'];
+                    aniContainerClose.translateY = ['0', sidebarHeight];
+                }
+                if(position === 'bottom') {
+                    sidebarHeight = sidebar.outerHeight();
+
+                    aniSidebarOpen.translateY = ['0', '100%'];
+                    aniSidebarClose.translateY = ['100%', '0'];
+
+                    aniContainerOpen.translateY = ['-' + sidebarHeight, '0'];
+                    aniContainerClose.translateY = ['0', '-' + sidebarHeight];
+                }
+
+
+                // Animate toggle
+                if(!sidebar.classList.contains(activeSidebarClass)) {
+                    sidebar.classList.add(activeSidebarClass);
+
+                    Velocity({
+                        elements: sidebar,
+                        properties: aniSidebarOpen,
+                        options: {
+                            duration: duration,
+                            easing: 'ease'
+                        }
+                    });
+
+                    Velocity({
+                        elements: content,
+                        properties: aniContainerOpen,
+                        options: {
+                            duration: duration,
+                            easing: 'ease'
+                        }
+                    });
+
+                    if(preventOverflow) {
+                        document.querySelector('.sidebar-toggle-container').classList.add('sidebar-toggle-container--prevent-overflow');
+                    }
+                } else {
+                    sidebar.classList.remove(activeSidebarClass);
+
+                    Velocity({
+                        elements: sidebar,
+                        properties: aniSidebarClose,
+                        options: {
+                            duration: duration,
+                            easing: 'ease'
+                        }
+                    });
+
+                    Velocity({
+                        elements: content,
+                        properties: aniContainerClose,
+                        options: {
+                            duration: duration,
+                            easing: 'ease'
+                        }
+                    });
+
+                    if(preventOverflow) {
+                        document.querySelector('.sidebar-toggle-container').classList.remove('sidebar-toggle-container--prevent-overflow');
+                    }
+                }
             });
         });
     };

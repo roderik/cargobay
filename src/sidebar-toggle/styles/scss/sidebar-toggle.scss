@@ -2,6 +2,8 @@
    Sidebar Toggle
    ========================================================================== */
 
+@import "config";
+
 /* Sidebar
    ========================================================================== */
 .sidebar-toggle-container--prevent-overflow {
@@ -22,8 +24,8 @@
     top: 0;
     left: 0;
 
-    width: 60%;
-    max-width: 30rem;
+    width: $sidebar--left__width;
+    max-width: $sidebar--left__max-width;
     height: 100%;
 }
 
@@ -33,8 +35,8 @@
     top: 0;
     right: 0;
 
-    width: 60%;
-    max-width: 30rem;
+    width: $sidebar--right__width;
+    max-width: $sidebar--right__max-width;
     height: 100%;
 }
 
@@ -45,8 +47,8 @@
     left: 0;
 
     width: 100%;
-    height: auto;
-    max-height: 80%;
+    height: $sidebar--top__height;
+    max-height: $sidebar--top__max-height;
 }
 
 .sidebar-toggle__sidebar--bottom {
@@ -56,20 +58,6 @@
     left: 0;
 
     width: 100%;
-    height: auto;
-    max-height: 80%;
-}
-
-
-/* Content
-   ========================================================================== */
-.sidebar-toggle__content {
-
-}
-
-
-/* Button
-   ========================================================================== */
-.sidebar-toggle__toggle-btn {
-
+    height: $sidebar--bottom__height;
+    max-height: $sidebar--bottom__max-height;
 }
