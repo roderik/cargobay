@@ -1,12 +1,12 @@
 ## Cargo Bay Sidebar Toggle
 
 ### General
-- Show/hide hidden sidebar
-- Top, right, bottom and left position is possible.
+- Show/hide a hidden sidebar
 - jQuery and vanilla js version
 
 ### Dependencies
 - [jQuery](http://jquery.com/) (for jQuery version)
+- [Velocity.js](http://julian.com/research/velocity/)
 
 ### Initialise
 ```javascript
@@ -15,7 +15,7 @@ cargobay.sidebarToggle.init();
 
 ### Usage
 
-With this add-on you can easely show and hide a hidden sidebar. You can place the sidebar at any side (top/right/bottom/left).
+This add-on allows you to easely show and hide a hidden sidebar. You can place the sidebar at any side (top/right/bottom/left).
 
 ##### Js-classes
 The class **js-sidebar-toggle__toggle-btn** is used as a javascript hook to identify the toggle-button of the sidebar.
@@ -33,21 +33,17 @@ All the config is done on the button with data-attributes:
 - **data-duration**: Duration of animation
 
 ##### Available SCSS-variables
-//Sidebar - left
-$sidebar--left__width: 60%!default;
-$sidebar--left__max-width: 30rem!default;
+**$sidebar--left__width:** 60%!default;<br>
+**$sidebar--left__max-width:** 30rem!default;
 
-//Sidebar - right
-$sidebar--right__width: 60%!default;
-$sidebar--right__max-width: 30rem!default;
+**$sidebar--right__width:** 60%!default;<br>
+**$sidebar--right__max-width:** 30rem!default;
 
-//Sidebar - top
-$sidebar--top__height: auto!default;
-$sidebar--top__max-height: 80%!default;
+**$sidebar--top__height:** auto!default;<br>
+**$sidebar--top__max-height:** 80%!default;
 
-//Sidebar - bottom
-$sidebar--bottom__height: auto!default;
-$sidebar--bottom__max-height: 80%!default;
+**$sidebar--bottom__height:** auto!default;<br>
+**$sidebar--bottom__max-height:** 80%!default;
 
 ##### Html-example
 
