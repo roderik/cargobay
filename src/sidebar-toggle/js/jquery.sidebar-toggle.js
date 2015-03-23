@@ -18,30 +18,39 @@ cargobay.sidebarToggle = (function($, window, undefined) {
 
     var activeSidebarClass = 'sidebar-toggle__sidebar--active';
 
-    var toggle;
+    var init, toggle;
+
+    var aniSidebarOpen = {},
+        aniSidebarClose = {},
+        aniContainerOpen = {},
+        aniContainerClose = {};
+
+    var sidebarWidth, sidebarHeight;
+
+    var $btn,
+        $container,
+        $content,
+        $sidebar,
+        position = '',
+        preventOverflow,
+        duration = 0;
 
 
-    toggle = function() {
+    // Init
+    init = function() {
         $('.js-sidebar-toggle__toggle-btn').on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
 
-            var $btn = $(this),
-                $container = $($btn.data('container')),
-                $content = $($btn.data('content')),
-                $sidebar = $($btn.data('sidebar')),
-                position = $btn.data('position'),
-                preventOverflow = $btn.data('prevent-overflow'),
-                duration = $btn.data('duration');
-
+            $btn = $(this),
+            $container = $($btn.data('container')),
+            $content = $($btn.data('content')),
+            $sidebar = $($btn.data('sidebar')),
+            position = $btn.data('position'),
+            preventOverflow = $btn.data('prevent-overflow'),
+            duration = $btn.data('duration');
 
             // Set direction variables
-            var aniSidebarOpen = {},
-                aniSidebarClose = {},
-                aniContainerOpen = {},
-                aniContainerClose = {};
-
-            var sidebarWidth, sidebarHeight;
-
             if(position === 'left') {
                 sidebarWidth = $sidebar.outerWidth();
 
@@ -79,47 +88,57 @@ cargobay.sidebarToggle = (function($, window, undefined) {
                 aniContainerClose.translateY = ['0', '-' + sidebarHeight];
             }
 
-
             // Animate toggle
-            if(!$sidebar.hasClass(activeSidebarClass)) {
-                $sidebar.addClass(activeSidebarClass);
-
-                $sidebar.velocity(aniSidebarOpen, {
-                    duration: duration,
-                    easing: 'ease'
-                });
-
-                $content.velocity(aniContainerOpen, {
-                    duration: duration,
-                    easing: 'ease'
-                });
-
-                if(preventOverflow) {
-                    $('.sidebar-toggle-container').addClass('sidebar-toggle-container--prevent-overflow');
-                }
-            } else {
-                $sidebar.removeClass(activeSidebarClass);
-
-                $sidebar.velocity(aniSidebarClose, {
-                    duration: duration,
-                    easing: 'ease'
-                });
-
-                $content.velocity(aniContainerClose, {
-                    duration: duration,
-                    easing: 'ease'
-                });
-
-                if(preventOverflow) {
-                    $('.sidebar-toggle-container').removeClass('sidebar-toggle-container--prevent-overflow');
-                }
-            }
+            toggle();
         });
     };
 
 
+    // Toggle
+    toggle = function() {
+        if(!$sidebar.hasClass(activeSidebarClass)) {
+            $sidebar.addClass(activeSidebarClass);
+
+            $sidebar.velocity(aniSidebarOpen, {
+                duration: duration,
+                easing: 'ease'
+            });
+
+            $content.velocity(aniContainerOpen, {
+                duration: duration,
+                easing: 'ease'
+            });
+
+            if(preventOverflow) {
+                $('.sidebar-toggle-container').addClass('sidebar-toggle-container--prevent-overflow');
+            }
+
+            $content.one('click', toggle);
+
+        } else {
+            $sidebar.removeClass(activeSidebarClass);
+
+            $sidebar.velocity(aniSidebarClose, {
+                duration: duration,
+                easing: 'ease'
+            });
+
+            $content.velocity(aniContainerClose, {
+                duration: duration,
+                easing: 'ease'
+            });
+
+            if(preventOverflow) {
+                $('.sidebar-toggle-container').removeClass('sidebar-toggle-container--prevent-overflow');
+            }
+
+            $content.off('click', toggle);
+        }
+    };
+
+
     return {
-        init: toggle
+        init: init
     };
 
 }(jQuery, window));
