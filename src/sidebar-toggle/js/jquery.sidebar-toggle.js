@@ -32,7 +32,7 @@ cargobay.sidebarToggle = (function($, window, undefined) {
         $content,
         $sidebar,
         position = '',
-        preventOverflow = true,
+        preventOverflow,
         duration = 0;
 
 

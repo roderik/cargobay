@@ -18,31 +18,41 @@ cargobay.sidebarToggle = (function(window, undefined) {
 
     var activeSidebarClass = 'sidebar-toggle__sidebar--active';
 
-    var toggle;
+    var init, toggle;
+
+    var aniSidebarOpen = {},
+        aniSidebarClose = {},
+        aniContainerOpen = {},
+        aniContainerClose = {};
+
+    var sidebarWidth, sidebarHeight;
+
+    var btn,
+        container,
+        content,
+        sidebar,
+        position = '',
+        preventOverflow = true,
+        duration = 0;
 
 
-    toggle = function() {
+    // Init
+    init = function() {
         [].forEach.call( document.querySelectorAll('.js-sidebar-toggle__toggle-btn'), function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
 
-                var btn = this,
-                    container = document.querySelector(btn.getAttribute('data-container')),
-                    content = document.querySelector(btn.getAttribute('data-content')),
-                    sidebar = document.querySelector(btn.getAttribute('data-sidebar')),
-                    position = btn.getAttribute('data-position'),
-                    preventOverflow = btn.getAttribute('data-prevent-overflow'),
-                    duration = btn.getAttribute('data-duration');
+                btn = this;
+                container = document.querySelector(btn.getAttribute('data-container'));
+                content = document.querySelector(btn.getAttribute('data-content'));
+                sidebar = document.querySelector(btn.getAttribute('data-sidebar'));
+                position = btn.getAttribute('data-position');
+                preventOverflow = btn.getAttribute('data-prevent-overflow');
+                duration = btn.getAttribute('data-duration');
 
 
-                // Set derection variables
-                var aniSidebarOpen = {},
-                    aniSidebarClose = {},
-                    aniContainerOpen = {},
-                    aniContainerClose = {};
-
-                var sidebarWidth, sidebarHeight;
-
+                // Set direction variables
                 if(position === 'left') {
                     sidebarWidth = sidebar.offsetWidth;
 
@@ -82,62 +92,73 @@ cargobay.sidebarToggle = (function(window, undefined) {
 
 
                 // Animate toggle
-                if(!sidebar.classList.contains(activeSidebarClass)) {
-                    sidebar.classList.add(activeSidebarClass);
-
-                    Velocity({
-                        elements: sidebar,
-                        properties: aniSidebarOpen,
-                        options: {
-                            duration: duration,
-                            easing: 'ease'
-                        }
-                    });
-
-                    Velocity({
-                        elements: content,
-                        properties: aniContainerOpen,
-                        options: {
-                            duration: duration,
-                            easing: 'ease'
-                        }
-                    });
-
-                    if(preventOverflow) {
-                        document.querySelector('.sidebar-toggle-container').classList.add('sidebar-toggle-container--prevent-overflow');
-                    }
-                } else {
-                    sidebar.classList.remove(activeSidebarClass);
-
-                    Velocity({
-                        elements: sidebar,
-                        properties: aniSidebarClose,
-                        options: {
-                            duration: duration,
-                            easing: 'ease'
-                        }
-                    });
-
-                    Velocity({
-                        elements: content,
-                        properties: aniContainerClose,
-                        options: {
-                            duration: duration,
-                            easing: 'ease'
-                        }
-                    });
-
-                    if(preventOverflow) {
-                        document.querySelector('.sidebar-toggle-container').classList.remove('sidebar-toggle-container--prevent-overflow');
-                    }
-                }
+                toggle();
             });
         });
     };
 
 
+    // Toggle
+    toggle = function() {
+        if(!sidebar.classList.contains(activeSidebarClass)) {
+            sidebar.classList.add(activeSidebarClass);
+
+            Velocity({
+                elements: sidebar,
+                properties: aniSidebarOpen,
+                options: {
+                    duration: duration,
+                    easing: 'ease'
+                }
+            });
+
+            Velocity({
+                elements: content,
+                properties: aniContainerOpen,
+                options: {
+                    duration: duration,
+                    easing: 'ease'
+                }
+            });
+
+            if(preventOverflow) {
+                document.querySelector('.sidebar-toggle-container').classList.add('sidebar-toggle-container--prevent-overflow');
+            }
+
+            content.addEventListener('click', toggle);
+
+        } else {
+            sidebar.classList.remove(activeSidebarClass);
+
+            Velocity({
+                elements: sidebar,
+                properties: aniSidebarClose,
+                options: {
+                    duration: duration,
+                    easing: 'ease'
+                }
+            });
+
+            Velocity({
+                elements: content,
+                properties: aniContainerClose,
+                options: {
+                    duration: duration,
+                    easing: 'ease'
+                }
+            });
+
+            if(preventOverflow) {
+                document.querySelector('.sidebar-toggle-container').classList.remove('sidebar-toggle-container--prevent-overflow');
+            }
+
+            content.removeEventListener('click', toggle);
+        }
+    };
+
+
     return {
-        init: toggle
+        init: init
     };
 
 }(window));
