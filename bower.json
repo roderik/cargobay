@@ -1,13 +1,15 @@
 {
   "name": "cargobay",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "homepage": "https://github.com/Kunstmaan/cargobay",
   "authors": [
     "Indri Kenens",
     "Ibe Vanmeenen",
     "Sam Bellen",
     "Kevin Fivé",
-    "Jens Gyselinck"
+    "Jens Gyselinck",
+    "Dries Beerten",
+    "Frédéric Aerts"
   ],
   "description": "Html, scss/css and js component library by Kunstmaan",
   "main": [
@@ -33,7 +35,10 @@
     "src/toggle/styles/css/toggle.css",
     "src/videolink/js/jquery.videolink.js",
     "src/videolink/styles/scss/videolink.scss",
-    "src/videolink/styles/css/videolink.css"
+    "src/videolink/styles/css/videolink.css",
+    "src/animate-form-elements/js/jquery.animate-form-elements.js",
+    "src/animate-form-elements/js/vanilla.animate-form-elements.js",
+    "src/animate-form-elements/styles/animate-form-elements.scss"
   ],
   "moduleType": [
     "globals"
