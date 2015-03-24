@@ -1,0 +1,60 @@
+/* Form group
+   ========================================================================== */
+
+.form__input-group {
+    position: relative;
+
+    margin: 3rem 0 0;
+}
+
+/* Inputs
+   ========================================================================== */
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: .5em;
+
+    background: transparent;
+
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+
+    transition: all .3s ease;
+
+    &:active,
+    &:focus,
+    &.form__input--active {
+        outline: none;
+
+        border-bottom-color: #fff;
+        background: rgba(0, 0, 0, .1);
+
+        & + .form__label {
+            transform: translateY(-2.6rem) translateX(-1rem) scale(.8);
+        }
+
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+/* Labels
+   ========================================================================== */
+
+.form__label {
+    z-index: -1;
+
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    display: block;
+    margin: 0;
+    padding: .5rem;
+
+    opacity: .8;
+
+    transition: all .3s ease;
+}
