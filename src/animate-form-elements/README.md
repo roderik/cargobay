@@ -16,7 +16,7 @@ cargobay.animateFormElements.init();
 
 
 ### Usage
-This element ads an animation on form labels when focusing input elements. The animation itself is entirely handled by css.
+This element adds an animation on form labels when focusing input elements. The animation itself is entirely handled by css.
 The class **'.js-form__input'** is used as the javascript-hook.
 This should be placed on the input element and prevents the animation rolling back when a field is filled in so label and value don't overlap.
 
@@ -40,3 +40,4 @@ $border-color:         $black;
 - Latest FireFox
 - Latest Safari
 - IE9 and up
+- IE10 and up (vanilla)

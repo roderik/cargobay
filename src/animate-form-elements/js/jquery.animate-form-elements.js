@@ -23,7 +23,7 @@ cargobay.animateFormElements = (function($, window, undefined) {
         $hook.on('blur', function() {
             var $this = $(this);
 
-            if($this.val().length !== 0) {
+            if ($this.val().length !== 0) {
                 $this.addClass('form__input--active');
             } else {
                 $this.removeClass('form__input--active');
