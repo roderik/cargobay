@@ -19,12 +19,12 @@ cargobay.animateFormElements = (function(window, undefined) {
     init = function() {
         // This is so the active state remains once there has been input in the field.
 
-        [].forEach.call( document.querySelectorAll('.js-scroll-to'), function(el) {
-            el.addEventlistener('blur', function() {
+        [].forEach.call( document.querySelectorAll('.js-form__input'), function(el) {
+            el.addEventListener('blur', function() {
                 if(el.value.length !== 0) {
-                    el.addClass('form__input--active');
+                    el.classList.add('form__input--active');
                 } else {
-                    el.removeClass('form__input--active');
+                    el.classList.remove('form__input--active');
                 }
             });
         });
