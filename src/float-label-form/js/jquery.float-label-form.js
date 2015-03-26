@@ -20,10 +20,10 @@ cargobay.floatLabelForm = (function($, window, undefined) {
         init;
 
     init = function() {
-        $hook.bind('checkval',function(){
+        $hook.bind('checkval', function() {
             var label = $(this).prev('.form__label');
 
-            if($(this).val().length !== 0){
+            if ($(this).val().length !== 0) {
                 label.addClass(activeLabelClass);
             } else {
                 label.removeClass(activeLabelClass);
