@@ -20,7 +20,7 @@ This component handles an animation on the labels of input fields when the user 
 The class **'.js-form__input'** is used as the javascript-hook, which should be placed on the input element.
 
 ```html
-<div class="form__input-group">
+<div class="form__group">
     <label class="form__label">Your First Name</label>
     <input type="text" class="form__input js-form__input" placeholder="First Name">
 </div>
