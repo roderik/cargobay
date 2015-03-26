@@ -29,7 +29,7 @@ cargobay.floatLabelForm = (function($, window, undefined) {
                 label.removeClass(activeLabelClass);
             }
 
-        }).on('keyup', function() {
+        }).on('keydown', function() {
             $(this).trigger('checkval');
         }).on('focus', function() {
            $(this).prev('.form__label').addClass(focusLabelClass);
