@@ -7,7 +7,6 @@
 
 ### Dependencies
 - jQuery
-- [jQuery-placeholder](https://github.com/mathiasbynens/jquery-placeholder) to compensate IE9's lack of placeholders
 
 
 ### Initialise
