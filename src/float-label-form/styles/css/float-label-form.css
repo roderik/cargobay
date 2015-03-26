@@ -8,7 +8,7 @@
 /* Form group
    ========================================================================== */
 
-.form__input-group {
+.form__group {
 	position: relative;
 	margin-top: 2rem;
 	-webkit-backface-visibility: hidden;
