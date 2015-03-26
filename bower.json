@@ -1,6 +1,6 @@
 {
   "name": "cargobay",
-  "version": "0.8.2.1",
+  "version": "0.8.3",
   "homepage": "https://github.com/Kunstmaan/cargobay",
   "authors": [
     "Indri Kenens",
@@ -36,9 +36,8 @@
     "src/videolink/js/jquery.videolink.js",
     "src/videolink/styles/scss/videolink.scss",
     "src/videolink/styles/css/videolink.css",
-    "src/animate-form-elements/js/jquery.animate-form-elements.js",
-    "src/animate-form-elements/js/vanilla.animate-form-elements.js",
-    "src/animate-form-elements/styles/animate-form-elements.scss"
+    "src/float-label-form/js/jquery.float-label-form.js",
+    "src/float-label-form/styles/float-label-form.scss"
   ],
   "moduleType": [
     "globals"
