@@ -16,7 +16,7 @@ var cargobay = cargobay || {};
 cargobay.floatLabelForm = (function($, window, undefined) {
     var activeLabelClass = 'form__label--active',
         focusLabelClass = 'form__label--focus',
-        $hook = $('.js-form__input'),
+        $hook = $('.js-form__field'),
         init;
 
     init = function() {

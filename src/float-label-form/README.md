@@ -2,7 +2,7 @@
 
 ### General
 - Animates the labels of input fields on focus
-- JQuery and vanilla-js version
+- JQuery version
 
 
 ### Dependencies
@@ -17,12 +17,12 @@ cargobay.floatLabelForm.init();
 
 ### Usage
 This component handles an animation on the labels of input fields when the user starts typing in the field.
-The class **'.js-form__input'** is used as the javascript-hook, which should be placed on the input element.
+The class **'.js-form__field'** is used as the javascript-hook, which should be placed on the input element.
 
 ```html
 <div class="form__group">
     <label class="form__label">Your First Name</label>
-    <input type="text" class="form__input js-form__input" placeholder="First Name">
+    <input type="text" class="form__input js-form__field" placeholder="First Name">
 </div>
 ```
 
