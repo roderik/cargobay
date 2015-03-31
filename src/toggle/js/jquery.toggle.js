@@ -118,10 +118,7 @@ cargobay.toggle = (function($, window, undefined) {
     };
 
     return {
-        init: init,
-        show: show,
-        hide: hide,
-        hideFast: hideFast
+        init: init
     };
 
 }(jQuery, window));
