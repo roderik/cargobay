@@ -27,7 +27,10 @@ Additional data attributes for the **js-toggle-btn** are the following:
 
 The **toggle-item** should be a wrapper for the **toggle-item__content** component.
 
-Inside the button you can optionally have a set of icons to illustrate the state of  the item you are hiding/showing. You can toggle these by applying the **toggle-btn__icon--show** (visible by default) and **toggle-btn__icon--hide** (shown when toggled) classes.
+Inside the button you can optionally have a set of icons to illustrate the state of the item you are hiding/showing. You can toggle these by applying the **toggle-btn__icon--show** (visible by default) and **toggle-btn__icon--hide** (shown when toggled) classes.
+
+In case you want to start off with an open container:
+Add the active class **toggle-item--active** to the target and **toggle-btn--active** to the button.
 
 ```html
 <div class="container">
