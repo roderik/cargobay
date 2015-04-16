@@ -30,7 +30,9 @@ cargobay.scrollToTop = function(undefined) {
 
                 duration = (typeof dataDuration !== undefined && dataDuration !== null && !isNaN(dataDuration)) ? dataDuration : defaultDuration;
 
-                Velocity(document.body, 'scroll', { duration: duration });
+                Velocity(document.body, 'scroll', {
+                    duration: duration
+                });
             }, false);
         });
     }();
