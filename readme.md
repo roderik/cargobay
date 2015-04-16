@@ -1,20 +1,19 @@
-## Cargo Bay _v0.8.6_
-
+## Cargo Bay
 Cargo Bay is a utility library with some useful and commonly used components and snippets.
 
 
-### Includes
-- [Scroll-to](src/scroll-to/)
-- [Scroll-to-top](src/scroll-to-top/)
-- [Toggle](src/toggle/)
-- [Has space](src/has-space/)
-- [Cookie-consent bar](src/cookie-consent/)
-- [Responsive audioplayer](src/audioplayer/)
-- [Videolink](src/videolink/)
-- [Full image background fallack](src/full-img-bg/)
-- [Tabs](src/tabs/)
-- [Sidebar Toggle](src/sidebar-toggle/)
-- [Float label form](src/float-label-form/)
+### Add-ons
+- [Scroll-to](add-ons/scroll-to/)
+- [Scroll-to-top](add-ons/scroll-to-top/)
+- [Toggle](add-ons/toggle/)
+- [Has space](add-ons/has-space/)
+- [Cookie-consent bar](add-ons/cookie-consent/)
+- [Responsive audioplayer](add-ons/audioplayer/)
+- [Videolink](add-ons/videolink/)
+- [Full image background fallack](add-ons/full-img-bg/)
+- [Tabs](add-ons/tabs/)
+- [Sidebar Toggle](add-ons/sidebar-toggle/)
+- [Float label form](add-ons/float-label-form/)
 
 
 
