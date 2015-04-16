@@ -10,7 +10,7 @@ var plugins = require('gulp-load-plugins')();
 var chalk = require('chalk');
 
 // Config
-var basePath = 'src';
+var basePath = 'add-ons';
 var cargobay = {
     scss : basePath + '/**/*/styles/scss/**/*.scss',
     js : [basePath + '/**/*/js/**/*.js', '!' + basePath + '/**/*/js/**/*.min.js'] // ! in front of a path excludes that path/those files. This is to prevent double minification.
@@ -21,7 +21,9 @@ var cargobay = {
 gulp.task('styles', function() {
     return gulp.src(cargobay.scss)
         // Scss -> Css
-        .pipe(plugins.rubySass())
+        .pipe(plugins.rubySass({
+            'sourcemap=none': true
+        }))
         .on('error', function (err) { console.log(err.message); })
 
         // Combine Media Queries
@@ -36,7 +38,7 @@ gulp.task('styles', function() {
         }))
 
         // Write to output dest
-        .pipe(gulp.dest('./src/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.css'
+        .pipe(gulp.dest('./' + basePath + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.css'
 
         // Rename the file again for the minified version of the css
         .pipe(plugins.rename(function(path){
@@ -47,7 +49,7 @@ gulp.task('styles', function() {
         .pipe(plugins.minifyCss())
 
         // Write to output dest
-        .pipe(gulp.dest('./src/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.min.css'
+        .pipe(gulp.dest('./' + basePath + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.min.css'
 
         // Show total size of css
         .pipe(plugins.size({
@@ -72,7 +74,7 @@ gulp.task('scripts', function () {
         .pipe(plugins.uglify())
 
         // Write to output dest
-        .pipe(gulp.dest('./src/')) // Because of rename, the dest will be ./src/**/*/js/**/*.min.js
+        .pipe(gulp.dest('./' + basePath + '/')) // Because of rename, the dest will be ./src/**/*/js/**/*.min.js
 
         // Show total size of js
         .pipe(plugins.size({
