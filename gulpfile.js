@@ -10,16 +10,25 @@ var plugins = require('gulp-load-plugins')();
 var chalk = require('chalk');
 
 // Config
-var basePath = 'add-ons';
+var basePath = {
+    addons: 'add-ons',
+    startkit: 'startkit'
+};
+
 var cargobay = {
-    scss : basePath + '/**/*/styles/scss/**/*.scss',
-    js : [basePath + '/**/*/js/**/*.js', '!' + basePath + '/**/*/js/**/*.min.js'] // ! in front of a path excludes that path/those files. This is to prevent double minification.
+    addons: {
+        scss : basePath.addons + '/**/*/styles/scss/**/*.scss',
+        js : [basePath.addons + '/**/*/js/**/*.js', '!' + basePath.addons + '/**/*/js/**/*.min.js'] // ! in front of a path excludes that path/those files. This is to prevent double minification.
+    },
+    startkit: {
+        scss : basePath.startkit + '/**/*/styles/scss/**/*.scss'
+    }
 };
 
 
 // Styles
-gulp.task('styles', function() {
-    return gulp.src(cargobay.scss)
+gulp.task('styles-addons', function() {
+    return gulp.src(cargobay.addons.scss)
         // Scss -> Css
         .pipe(plugins.rubySass({
             'sourcemap=none': true
@@ -38,7 +47,7 @@ gulp.task('styles', function() {
         }))
 
         // Write to output dest
-        .pipe(gulp.dest('./' + basePath + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.css'
+        .pipe(gulp.dest('./' + basePath.addons + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.css'
 
         // Rename the file again for the minified version of the css
         .pipe(plugins.rename(function(path){
@@ -49,7 +58,46 @@ gulp.task('styles', function() {
         .pipe(plugins.minifyCss())
 
         // Write to output dest
-        .pipe(gulp.dest('./' + basePath + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.min.css'
+        .pipe(gulp.dest('./' + basePath.addons + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.min.css'
+
+        // Show total size of css
+        .pipe(plugins.size({
+            title: 'css'
+        }));
+});
+
+gulp.task('styles-startkit', function() {
+    return gulp.src(cargobay.startkit.scss)
+        // Scss -> Css
+        .pipe(plugins.rubySass({
+            'sourcemap=none': true
+        }))
+        .on('error', function (err) { console.log(err.message); })
+
+        // Combine Media Queries
+        .pipe(plugins.combineMediaQueries())
+
+        // Prefix where needed
+        .pipe(plugins.autoprefixer('last 1 version'))
+
+        // Use rename function to correctly place the dest path.
+        .pipe(plugins.rename(function(path){
+            path.dirname += '/../css';
+        }))
+
+        // Write to output dest
+        .pipe(gulp.dest('./' + basePath.startkit + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.css'
+
+        // Rename the file again for the minified version of the css
+        .pipe(plugins.rename(function(path){
+            path.basename += '.min';
+        }))
+
+        // Minify output
+        .pipe(plugins.minifyCss())
+
+        // Write to output dest
+        .pipe(gulp.dest('./' + basePath.startkit + '/')) // Because of rename dest will be: './src/**/*/styles/css/**/*.min.css'
 
         // Show total size of css
         .pipe(plugins.size({
@@ -59,8 +107,8 @@ gulp.task('styles', function() {
 
 
 // Scripts
-gulp.task('scripts', function () {
-    return gulp.src(cargobay.js)
+gulp.task('scripts-addons', function () {
+    return gulp.src(cargobay.addons.js)
         // JsHint
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter(require('jshint-stylish')))
@@ -74,7 +122,7 @@ gulp.task('scripts', function () {
         .pipe(plugins.uglify())
 
         // Write to output dest
-        .pipe(gulp.dest('./' + basePath + '/')) // Because of rename, the dest will be ./src/**/*/js/**/*.min.js
+        .pipe(gulp.dest('./' + basePath.addons + '/')) // Because of rename, the dest will be ./src/**/*/js/**/*.min.js
 
         // Show total size of js
         .pipe(plugins.size({
@@ -86,17 +134,19 @@ gulp.task('scripts', function () {
 // Watch
 gulp.task('watch', function () {
     // Styles
-    gulp.watch(cargobay.scss, ['styles']);
+    gulp.watch(cargobay.addons.scss, ['styles-addons']);
+    gulp.watch(cargobay.startkit.scss, ['styles-startkit']);
 
     // Scripts
-    gulp.watch(cargobay.js, ['scripts']);
+    gulp.watch(cargobay.addons.js, ['scripts-addons']);
 
     console.log(chalk.green('Build.complete!'));
 });
 
 
 // Build
-gulp.task('build', ['styles', 'scripts'], function(){
+gulp.task('build', ['styles-addons', 'scripts-addons'], function(){
+    gulp.start('styles-startkit');
     console.log(chalk.green('Build complete!'));
 });
 
