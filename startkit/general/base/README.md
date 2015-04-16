@@ -1,4 +1,4 @@
-## Cargo Bay Buttons
+## Cargo Bay Base
 
 ### General
 Base for your app. Includes a default box-sizing and setup for your html and body element.
