@@ -1,7 +1,7 @@
 ## Cargo Bay Buttons
 
 ### General
-Base for your app. Includes default box-sizing and setup for html and body element.
+Base for your app. Includes a default box-sizing and setup for your html and body element.
 
 
 ### Available SCSS variables
