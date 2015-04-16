@@ -38,7 +38,7 @@ cargobay.toggle = function(undefined) {
 
     // Main toggle function
     _toggle = function() {
-        [].forEach.call( document.querySelectorAll('.' + btnClass), function(btn) {
+        [].forEach.call(document.querySelectorAll('.' + btnClass), function(btn) {
             addMultiEventistener(btn, 'click touchstart mousedown', function(e){
                 e.preventDefault();
             });
@@ -64,7 +64,7 @@ cargobay.toggle = function(undefined) {
                         var ownTarget = btn.getAttribute('data-target'),
                             currentLevel = btn.getAttribute('data-level');
 
-                        [].forEach.call( document.querySelectorAll('.' + btnClass + '[data-level="' + currentLevel + '"]'), function(btn) {
+                        [].forEach.call(document.querySelectorAll('.' + btnClass + '[data-level="' + currentLevel + '"]'), function(btn) {
                             var btnTarget  = btn.getAttribute('data-target');
 
                             if(ownTarget !== btnTarget){
