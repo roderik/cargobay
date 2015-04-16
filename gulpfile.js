@@ -19,9 +19,7 @@ var cargobay = {
 
 // Styles
 gulp.task('styles', function() {
-    return gulp.src(cargobay.scss)
-        // Scss -> Css
-        .pipe(plugins.rubySass())
+    return plugins.rubySass(cargobay.scss)
         .on('error', function (err) { console.log(err.message); })
 
         // Combine Media Queries
