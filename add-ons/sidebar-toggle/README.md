@@ -16,7 +16,7 @@ cargobay.sidebarToggle();
 ```
 
 ### Usage
-This add-on allows you to easely show and hide a hidden sidebar. You can place the sidebar at any side (top/right/bottom/left).
+This add-on allows you to easely show and hide a hidden sidebar. You can place the sidebar on any side of your page (top/right/bottom/left).
 
 
 #### Js-classes
