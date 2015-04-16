@@ -16,6 +16,9 @@ Cargo Bay is a utility library with some useful and commonly used components and
 - [Float label form](add-ons/float-label-form/)
 
 
+### Startkit
+- [Buttons](startkit/blocks/buttons/)
+
 
 ### Installing using Bower
 ```

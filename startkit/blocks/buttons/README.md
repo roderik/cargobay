@@ -1,7 +1,7 @@
 ## Cargo Bay Buttons
 
 ### General
-- Basic styling for buttons
+Basic styling for buttons
 
 
 ### HTML
@@ -61,4 +61,4 @@ $btn--secondary-color--hover:       #fff !default;
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE9 (IE10 for vanilla version) and up
+- IE9 and up
