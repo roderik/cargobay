@@ -2,7 +2,7 @@
    Toggle
 
    Initialize:
-   cargobay.toggle;
+   cargobay.toggle();
 
    Support:
    Latest Chrome

@@ -2,7 +2,7 @@
    Scroll to top
 
    Initialize:
-   cargobay.scrollToTop.init();
+   cargobay.scrollToTop();
 
    Support:
    Latest Chrome
