@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="nl">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cargo Bay Videolinks - jQuery</title>
+    <title>Cargo Bay Video-link - jQuery</title>
 
-    <meta name="description" content="Cargo Bay Videolinks - Jquery">
-
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type='text/css' />
-    <link rel="stylesheet" href="../styles/css/videolink.css" type='text/css' />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/css/videolink.css">
 </head>
 <body>
     <div class="container">
@@ -30,19 +28,10 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
-    <!--
-        /* ============================================================================ */
-            This is a special minified version of the videolink component where the
-            http:// is included in the video url.
-            This is so the video will load when the .html file is loaded via file://
-            When using the videolink component you should use the javascript file
-            included in the videolink/js folder.
-    -->
-            <script src="js/jquery.videolink.min.js"></script>
-    <!--/* ============================================================================ */-->
+    <script src="../js/jquery.videolink.js"></script>
     <script>
         $(function() {
-            cargobay.videolink.init();
+            cargobay.videolink();
         });
     </script>
 </body>

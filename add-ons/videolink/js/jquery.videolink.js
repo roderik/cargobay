@@ -2,7 +2,7 @@
    Videolink
 
    Initialize:
-   cargobay.videolink.init();
+   cargobay.videolink();
 
    Dependencies:
    jQuery
@@ -18,7 +18,7 @@
 
 var cargobay = cargobay || {};
 
-cargobay.videolink = (function($, window, undefined) {
+cargobay.videolink = function(undefined) {
 
     var init;
 
@@ -26,11 +26,11 @@ cargobay.videolink = (function($, window, undefined) {
         $('.js-videolink-play-link').on('click', function(e) {
             e.preventDefault();
 
-            var $this = $(this),
-                provider = $this.data('video-provider'),
-                id = $this.data('video-id'),
-                makeFluid = $this.data('make-fluid'),
-                $videoContainer = $this.next('.js-videolink-container'),
+            var $playLink = $(this),
+                provider = $playLink.data('video-provider'),
+                id = $playLink.data('video-id'),
+                makeFluid = $playLink.data('make-fluid'),
+                $videoContainer = $playLink.next('.js-videolink-container'),
                 template;
 
             // Construct template
@@ -52,18 +52,13 @@ cargobay.videolink = (function($, window, undefined) {
 
             // Hide link
             if(Modernizr.csstransitions) {
-                $this.one('transitionend webkitTransitionEnd', function() {
-                    $this.addClass('videolink__video-link--hidden');
+                $playLink.one('transitionend webkitTransitionEnd', function() {
+                    $playLink.addClass('videolink__video-link--hidden');
                 });
-                $this.addClass('videolink__video-link--hide');
+                $playLink.addClass('videolink__video-link--hide');
             } else {
-                $this.addClass('videolink__video-link--hidden');
+                $playLink.addClass('videolink__video-link--hidden');
             }
         });
-    };
-
-    return {
-        init: init
-    };
-
-}(jQuery, window));
+    }();
+};
