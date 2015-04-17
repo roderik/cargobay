@@ -18,6 +18,8 @@ Cargo Bay is a utility library with some useful and commonly used components and
 ### Startkit
 General
 - [Base](startkit/general/base/)
+- [Headings](startkit/general/headings/)
+- [Bodycopy](startkit/general/bodycopy/)
 
 Blocks
 - [Buttons](startkit/blocks/buttons/)

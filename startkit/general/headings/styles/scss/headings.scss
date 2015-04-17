@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Headings
+   ========================================================================== */
+
+$headings-font-family:                  'Times New Roman', serif !default;
+
+$headings-default-margin:               2rem 0 .8rem 0 !default;
+$headings-default-line-height:          1.2 !default;
+
+$headings--h1-size:                     3rem !default;
+$headings--h2-size:                     2rem !default;
+$headings--h3-size:                     1.8rem !default;
+$headings--h4-size:                     1.4rem !default;
+$headings--h5-size:                     1.2rem !default;
+$headings--h6-size:                     1rem !default;
+
+
+/* Shared
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    margin: $headings-default-margin;
+
+    font-family: $headings-font-family;
+    line-height: $headings-default-line-height;
+
+    + p {
+        margin-top: 0;
+    }
+}
+
+
+/* Specific
+   ========================================================================== */
+h1 {
+    font-size: $headings--h1-size;
+}
+
+h2 {
+    font-size: $headings--h2-size;
+}
+
+h3 {
+    font-size: $headings--h3-size;
+}
+
+h4 {
+    font-size: $headings--h4-size;
+}
+
+h5 {
+    font-size: $headings--h5-size;
+}
+
+h6 {
+    font-size: $headings--h6-size;
+}
