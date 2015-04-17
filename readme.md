@@ -7,13 +7,12 @@ Cargo Bay is a utility library with some useful and commonly used components and
 - [Scroll-to-top](add-ons/scroll-to-top/)
 - [Toggle](add-ons/toggle/)
 - [Has space](add-ons/has-space/)
-- [Cookie-consent bar](add-ons/cookie-consent/)
-- [Responsive audioplayer](add-ons/audioplayer/)
-- [Videolink](add-ons/videolink/)
-- [Full image background fallack](add-ons/full-img-bg/)
 - [Tabs](add-ons/tabs/)
 - [Sidebar Toggle](add-ons/sidebar-toggle/)
 - [Float label form](add-ons/float-label-form/)
+- [Cookie-consent bar](add-ons/cookie-consent/)
+- [Videolink](add-ons/videolink/)
+- [Responsive audioplayer](add-ons/audioplayer/)
 
 
 ### Startkit
@@ -23,6 +22,7 @@ General
 Blocks
 - [Buttons](startkit/blocks/buttons/)
 - [Hr](startkit/blocks/hr/)
+- [Images](startkit/blocks/images/)
 
 
 ### Installing using Bower

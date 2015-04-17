@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Images
+   ========================================================================== */
+
+$img-max-width:     100% !default;
+$img-height:        auto !default;
+$img-max-height:    100% !default;
+
+$figure-margin:     0 !default;
+
+img {
+    max-width: $img-max-width;
+    height: $img-height;
+    max-height: $img-max-height;
+}
+
+figure {
+    margin: $figure-margin;
+
+    img {
+        display: block;
+    }
+}
