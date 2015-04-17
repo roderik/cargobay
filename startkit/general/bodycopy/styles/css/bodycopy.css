@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Body Copy
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+
+* {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+html,
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 1.6;
+	color: #444;
+}
+
+p {
+	margin: 1rem 0;
+}
+
+/* General Modifiers
+   ========================================================================== */
+
+.text--upper {
+	text-transform: uppercase;
+}
+
+.text--center {
+	text-align: center;
+}
+
+.text--right {
+	text-align: right;
+}
+
+/* Intro text
+   ========================================================================== */
+
+.text--intro {
+	font-size: 1.2rem;
+	line-height: 1.3;
+	color: #aaa;
+}
+

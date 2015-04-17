@@ -1,5 +1,5 @@
 ## Cargo Bay
-Cargo Bay is a utility library with some useful and commonly used components and snippets.
+Cargo Bay is a html, scss/css and js component library by Kunstmaan
 
 
 ### Add-ons
