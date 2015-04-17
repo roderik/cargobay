@@ -22,6 +22,7 @@ General
 
 Blocks
 - [Buttons](startkit/blocks/buttons/)
+- [Hr](startkit/blocks/hr/)
 
 
 ### Installing using Bower
