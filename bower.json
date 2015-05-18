@@ -37,7 +37,9 @@
     "src/videolink/styles/scss/videolink.scss",
     "src/videolink/styles/css/videolink.css",
     "src/float-label-form/js/jquery.float-label-form.js",
-    "src/float-label-form/styles/float-label-form.scss"
+    "src/float-label-form/styles/float-label-form.scss",
+    "src/image-loader/js/jquery.image-loader.js",
+    "src/image-loader/styles/image-loader.scss"
   ],
   "moduleType": [
     "globals"

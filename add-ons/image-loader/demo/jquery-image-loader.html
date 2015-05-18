@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cargo Bay Image Loader - jQuery</title>
+
+    <meta name="description" content="Image loader demo">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/css/image-loader.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Loader - jQuery</h1>
+        </header>
+
+        <main role="main">
+            <picture class="js-image-loader__wrapper image-loader__wrapper">
+              <source srcset="http://lorempixel.com/800/400/abstract" media="(min-width: 1000px)">
+              <source srcset="http://lorempixel.com/600/300/abstract" media="(min-width: 800px)">
+              <source srcset="http://lorempixel.com/400/200/abstract">
+              <img class="js-image-loader__image image-loader__image" srcset="http://lorempixel.com/400/200/abstract" alt="Alt text - styled">
+            </picture>
+        </main>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js" async></script>
+    <script src="../js/jquery.image-loader.js"></script>
+    <script>
+        $(function() {
+            cargobay.imageLoader();
+        });
+    </script>
+</body>
+</html>

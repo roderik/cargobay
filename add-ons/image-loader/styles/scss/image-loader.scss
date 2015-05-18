@@ -1,0 +1,27 @@
+/* ==========================================================================
+   image loader styling
+   ========================================================================== */
+
+@import "config";
+
+// General
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+// Image & alt text
+
+.image-loader__wrapper {
+    background: #333;
+}
+
+.image-loader__image {
+    background: #333;
+
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
