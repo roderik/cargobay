@@ -16,7 +16,8 @@ var cargobay = cargobay || {};
 
 cargobay.sidebarToggle = (function(window, undefined) {
 
-    var activeSidebarClass = 'sidebar-toggle__sidebar--active';
+    var activeSidebarClass = 'sidebar-toggle__sidebar--active',
+        activeButtonClass = 'sidebar-toggle__toggle-btn--active';
 
     var init, toggle;
 
@@ -102,6 +103,7 @@ cargobay.sidebarToggle = (function(window, undefined) {
     toggle = function() {
         if(!sidebar.classList.contains(activeSidebarClass)) {
             sidebar.classList.add(activeSidebarClass);
+            btn.classList.add(activeButtonClass);
 
             Velocity({
                 elements: sidebar,
@@ -129,6 +131,7 @@ cargobay.sidebarToggle = (function(window, undefined) {
 
         } else {
             sidebar.classList.remove(activeSidebarClass);
+            btn.classList.remove(activeButtonClass);
 
             Velocity({
                 elements: sidebar,
