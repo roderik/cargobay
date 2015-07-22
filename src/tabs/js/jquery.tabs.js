@@ -39,7 +39,7 @@ cargobay.tabs = (function($, window, undefined) {
 
             } else {
                 // Update tabs
-                $this.siblings(tabClassActive).removeClass(tabClassActive);
+                $this.siblings('.' + tabClassActive).removeClass(tabClassActive);
                 $this.addClass(tabClassActive);
 
                 // Update panes
