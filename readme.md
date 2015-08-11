@@ -1,5 +1,7 @@
 ## Cargo Bay _v0.8.8_
 
+[![Build Status](https://travis-ci.org/Kunstmaan/cargobay.svg)](https://travis-ci.org/Kunstmaan/cargobay)
+
 Cargo Bay is a utility library with some useful and commonly used components and snippets.
 
 
