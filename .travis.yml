@@ -1,0 +1,10 @@
+language: node_js
+
+sudo: false
+
+before_script:
+  - npm install
+  - bower install
+
+script:
+  - gulp build
