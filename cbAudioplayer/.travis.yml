@@ -14,6 +14,3 @@ before_script:
 
 script:
   - gulp test
-
-after_success:
-  - if [ "${TRAVIS_BRANCH}" == "master" ]; then gulp deploy; fi
