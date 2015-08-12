@@ -17,11 +17,9 @@ before_script:
 script:
   - gulp test
 
-after_script:
+after_success:
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-
-after_success:
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then gulp deploy; fi
 
 env:
