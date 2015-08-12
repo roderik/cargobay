@@ -11,3 +11,6 @@ node_modules/
 .temp/
 scss-lint-report.xml
 *.map
+bower_components
+Gemfile.lock
+dist/
