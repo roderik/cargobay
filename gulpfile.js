@@ -2,6 +2,8 @@
 
 // Require Gulp
 var gulp = require('gulp');
+var debug = require('gulp-debug');
+
 
 // Load Gulp plugins
 var plugins = require('gulp-load-plugins')();
@@ -53,16 +55,19 @@ var clean = require('gulp-clean');
 
 gulp.task('clean', function(){
   return gulp.src(['dist/*'], {read:false})
-  .pipe(clean());
+          .pipe(debug({title: 'clean:'}))
+        .pipe(clean());
 });
 
 gulp.task('dist',['clean'], function(){
-  gulp.src(['demo/*', 'cbAudioplayer/demo/*'])
-  .pipe(gulp.dest('dist'));
+  return gulp.src(['demo/*', 'cbAudioplayer/demo/*', 'cbCookieConsent/demo/*', 'cbFloatLabelForm/demo/*'])
+          .pipe(debug({title: 'dist:'}))
+          .pipe(gulp.dest('dist'));
 });
 
 var ghPages = require('gulp-gh-pages');
-gulp.task('deploy',['dist'], function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+gulp.task('deploy', ['dist'], function(cb) {
+  return gulp.src(['dist/*'])
+        .pipe(debug({title: 'ghpages:'}))
+        .pipe(ghPages());
 });

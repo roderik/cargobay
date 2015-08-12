@@ -14,3 +14,4 @@ scss-lint-report.xml
 bower_components
 Gemfile.lock
 dist/
+.publish/

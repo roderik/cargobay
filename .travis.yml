@@ -7,6 +7,8 @@ notifications:
     secure: "bFd+zkP/Eim64Ti8IAgq7k7CbS7Gpp1g890zMqEdPxVkTOqoIzXdoO+Uqabq8AkA0S/seBSdFsTN20wvQK2cNxmShppn1g+3C0iXZrBVwJx8ChnTZXI0EdqKgGbDxjSq06coWN2UFUlM7frKdxnF5uN0/pHqKje5mCKmq+Gpn44="
 
 before_script:
+  - git config --global user.name "Kunstmaan Labs"
+  - git config --global user.email "labs@kunstmaan.be"
   - bundle install
   - npm install
   - npm install -g bower
@@ -15,5 +17,13 @@ before_script:
 script:
   - gulp test
 
+after_script:
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+
 after_success:
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then gulp deploy; fi
+
+env:
+  global:
+    - secure: "pvkyY1O2UKzENEYpSTfOiB8ODrgM8pwaC+Akrjq84vVj/QJjRpr6ThmkXeD3UqANG/BNd1l/BEV97xV+kNCbc3uUwBGzAABPfGNFsT1bRohikPJoy7dy63laIxBiZCZK8K3c2H6+Jx1zvJpFmX0jOF/Qz7QUJnhjnNuflWGu9lg="
