@@ -69,5 +69,5 @@ var ghPages = require('gulp-gh-pages');
 gulp.task('deploy', ['dist'], function(cb) {
   return gulp.src(['dist/*'])
         .pipe(debug({title: 'ghpages:'}))
-        .pipe(ghPages());
+        .pipe(ghPages({"remoteUrl": "https://github.com/Kunstmaan/cargobay.git"}));
 });
