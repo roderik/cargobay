@@ -1,20 +1,19 @@
 @import "config";
 
+
 /* ==========================================================================
    Cookie consent
    ========================================================================== */
 
 .cookie-bar {
     position: fixed;
-    bottom: $cookie-bar-position-bottom;
-    top: $cookie-bar-position-top;
-    left: $cookie-bar-position-left;
-    right: $cookie-bar-position-right;
+
     display: none;
-    background-color: $cookie-bar-color;
-    text-align: $cookie-bar-text-align;
     width: $cookie-bar-width;
     padding: $cookie-bar-padding;
+
+    background-color: $cookie-bar-color;
+    text-align: $cookie-bar-text-align;
     color: $cookie-bar-font-color;
     line-height: $cookie-bar-line-height;
     font: {
@@ -29,6 +28,23 @@
 
     .cookie-bar__btn {
         margin: $cookie-bar-button-margin;
+
+        border-radius: 0;
+    }
+
+    @media (min-width: 768px) {
+        bottom: $cookie-bar-position-bottom;
+        top: $cookie-bar-position-top;
+        left: $cookie-bar-position-left;
+        right: $cookie-bar-position-right;
+
+        max-width: $cookie-bar-max-width;
+
+        .cookie-bar__btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
     }
 }
 

@@ -7,11 +7,12 @@
 //General
 $cookie-bar-position-top:                   auto!default;
 $cookie-bar-position-right:                 auto!default;
-$cookie-bar-position-bottom:                0!default;
-$cookie-bar-position-left:                  0!default;
+$cookie-bar-position-bottom:                20px!default;
+$cookie-bar-position-left:                  20px!default;
 $cookie-bar-color:                          rgba(86,86,86,0.95)!default;
-$cookie-bar-text-align:                     center!default;
+$cookie-bar-text-align:                     left!default;
 $cookie-bar-width:                          100%!default;
+$cookie-bar-max-width:                      420px!default;
 $cookie-bar-padding:                        10px 10px 0px 10px!default;
 $cookie-bar-font-color:                     #fff!default;
 $cookie-bar-font-family:                    Helvetica, Arial, sans-serif!default;
