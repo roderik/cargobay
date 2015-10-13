@@ -2,7 +2,7 @@
    Cookie Consent
 
    Initialize:
-   cargobay.cookieConsent.init();
+   cargobay.cookieConsent();
 
    Support:
    Latest Chrome
@@ -13,11 +13,9 @@
 
 var cargobay = cargobay || {};
 
-cargobay.cookieConsent = (function($, window, undefined) {
+cargobay.cookieConsent = function(undefined) {
 
-    var init;
-
-    init = function() {
+    var init = (function() {
         var $cookieBar = $('#cookie-bar'),
             $cookieBarConsentBtn = $('#cookie-bar__consent-btn'),
             _hasCookie = document.cookie.match(/(?:(?:^|.*;\s*)cargobay\-cookie\-consent\s*\=\s*([^;]*).*$)|^.*$/)[1];
@@ -31,10 +29,5 @@ cargobay.cookieConsent = (function($, window, undefined) {
             document.cookie = 'cargobay-cookie-consent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
             $cookieBar.removeClass('cookie-bar--visible');
         });
-    };
-
-    return {
-        init: init
-    };
-
-}(jQuery, window));
+    })();
+};
