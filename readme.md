@@ -1,37 +1,31 @@
-## Cargo Bay _v0.8.8_
+# Cargobay _v0.8.8_
 
 [![Build Status](https://travis-ci.org/Kunstmaan/cargobay.svg)](https://travis-ci.org/Kunstmaan/cargobay)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 
-Cargo Bay is a utility library with some useful and commonly used components and snippets.
-
-
-### Includes
-- [Scroll-to](src/scroll-to/)
-- [Scroll-to-top](src/scroll-to-top/)
-- [Toggle](src/toggle/)
-- [Has space](src/has-space/)
-- [Cookie-consent bar](src/cookie-consent/)
-- [Responsive audioplayer](src/audioplayer/)
-- [Videolink](src/videolink/)
-- [Full image background fallack](src/full-img-bg/)
-- [Tabs](src/tabs/)
-- [Sidebar Toggle](src/sidebar-toggle/)
-- [Float label form](src/float-label-form/)
+Cargobay is a utility library with some useful and commonly used components and snippets.
 
 
+## Includes
+- [Cookie-consent bar](cbCookieConsent/)
+- [Has space](cbHasSpace/)
+- [Scroll-to](cbScrollTo/)
+- [Toggle](cbToggle/)
+- [Videolink](cbVideolink/)
 
-### Installing using Bower
+
+## Installing using Bower
 ```
 bower install cargobay
 ```
 
 
-### Contribution
+## Contribution
 
-##### Git Flow
+#### Git Flow
 Cargo Bay works with [git-flow](https://github.com/nvie/gitflow).
 
-For a contribution to Cargo Bay, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization) with the addition of a pull-request.
+For a contribution to Cargobay, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization) with the addition of a pull-request.
 
 Example for adding a feature:
 - Start from develop (make sure to pull first)
@@ -41,6 +35,8 @@ Example for adding a feature:
 - when done, make a pull-request from your feature branch to develop
 - after the pull-request is accepted, do `git flow feature finish -your feature name-`
 
+## Demo
+Examples of this components can be found on [gh-pages](http://kunstmaan.github.com/cargobay)
 
-### License
-Cargo Bay is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+## License
+Cargobay is licensed under the [MIT license](http://opensource.org/licenses/MIT).

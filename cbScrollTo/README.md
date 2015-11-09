@@ -1,35 +1,40 @@
-## Cargo Bay Scroll-to
+## Cargobay ScrollTo
 
 ### General
-- Scroll to snippet
-- JQuery and vanilla-js version
+- Allows you to scroll to a target element you picked up to
+- 3 options attributes with default parameters
+- Scroll to top by default
 
 
-### Dependencies
-- jQuery for the jQuery version
+## Required includes
+- **Javascript**
+    - cargobay.general.min.js
+    - cargobay.scroll-to.min.js
 
 
 ### Initialise
 ```javascript
-cargobay.scrollTo.init();
+cargobay.general();
+cargobay.scrollTo();
 ```
-
 
 ### Usage
-The class **'.js-scroll-to'** is used as the javascript-hook.
-Place this on a link-tag and on click there will be a scroll animation to the element defined in the href-attribute.
+The class **.js-scroll-to** is used as javascript hook to identify a scrollTo button.
 
-With the **data-offset** attribute, you can set the desired offset from the target to scroll to.
+With the **data-duration** attribute, you can select a scroll animation duration in ms, **500 by default**.
 
-With the **data-animation-duration** attribute, you can set the desired duration of the scroll animation. (defaults to 300ms)
+The **data-scroll-to** attribute is used to select the Id of the element you want to scroll to, **Scroll to top by default**.
+
+With the **data-scroll-parent** attribute, you can select a scrollable element, other than the Body, **Body by default**.
 
 ```html
-<a href="#chapter-two" data-offset="20" data-animation-duration="300" class="js-scroll-to" >Scroll to #chapter-two please</a>
+<a href="#" data-duration="2000" data-scroll-to="#idelement" class="js-scroll-to">Scroll to element</a>
 ```
+
 
 
 ### Support
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE9 and up
+- IE10 and up

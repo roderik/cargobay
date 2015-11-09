@@ -1,0 +1,22 @@
+{
+    "name": "cargobay-videolink",
+    "version": "0.1.0",
+    "homepage": "https://labs.kunstmaan.be/cargobay",
+    "authors": [
+        "Kunstmaan team <labs@kunstmaan.be>"
+    ],
+    "description": "Videolink",
+    "main": [
+        "js/cargobay.vidoelink.js",
+        "scss/cargobay.vidoelink.scss"
+    ],
+    "moduleType": [
+        "globals"
+    ],
+    "keywords": [
+        "cargobay",
+        "videolink"
+    ],
+    "license": "MIT",
+    "ignore": []
+}

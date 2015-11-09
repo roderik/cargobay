@@ -1,0 +1,25 @@
+{
+    "name": "cargobay-scroll-to",
+    "version": "0.1.0",
+    "homepage": "https://labs.kunstmaan.be/cargobay",
+    "authors": [
+        "Kunstmaan team <labs@kunstmaan.be>"
+    ],
+    "description": "Scroll-to",
+    "main": [
+        "js/cargobay.scroll-to.js",
+        "scss/cargobay.scroll-to.scss"
+    ],
+    "moduleType": [
+        "globals"
+    ],
+    "keywords": [
+        "cargobay",
+        "scroll-to"
+    ],
+    "license": "MIT",
+    "ignore": [],
+    "dependencies": {
+        "cargobay-general": ">= 0.1.0"
+    }
+}

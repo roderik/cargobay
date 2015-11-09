@@ -1,17 +1,17 @@
-## Cargo Bay Has-space
+## Cargobay Has-space
 
 ### General
 - Calculates if items in a given container have enough space to stand next to eachother.
-- jQuery and vanilla-js version
 
-
-### Dependencies
-- jQuery (for jQuery version)
-
+## Required includes
+- **Javascript**
+    - cargobay.general.min.js
+    - cargobay.has-space.min.js
 
 ### Initialise
 ```javascript
-cargobay.hasSpace.init();
+cargobay.general();
+cargobay.hasSpace();
 ```
 
 
@@ -61,4 +61,4 @@ The classes **'.has-space--space'** and **'.has-space--no-space'** are used to d
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE9 (IE10 for vanilla version) and up
+- IE10 and up
