@@ -29,10 +29,13 @@ Available values are " *youtube* " and " *vimeo* "
 
 The **data-video-id** attribute is used by the javascript to load the requested video.
 
+The **.js-videolink-placeholder** is **optional**. If this class is set on the image, the src will be replaced by the thumbnail set by the providers API.
+
+
 ```html
 <div class="videolink">
     <a href="//www.youtube.com/embed/C9OfBcjyxKY" target="_blank" class="js-videolink-play-link videolink__video-link" data-video-provider="youtube" data-video-id="C9OfBcjyxKY" data-make-fluid="true">
-        <img src="img/videolink.jpg" alt="videolink-image" class="videolink__video-link__image" />
+        <img src="img/videolink.jpg" alt="videolink-image" class="videolink__video-link__image js-videolink-placeholder" />
     </a>
     <div class="js-videolink-container videolink__video-container"></div>
 </div>
