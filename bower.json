@@ -1,0 +1,39 @@
+{
+    "name": "cargobay",
+    "version": "1.0.0",
+    "homepage": "https://labs.kunstmaan.be/cargobay",
+    "authors": [
+        "Kunstmaan team <labs@kunstmaan.be>"
+    ],
+    "description": "Html, scss/css and js component library by Kunstmaan",
+    "main": [
+        "cbCookieConsent/js/cargobay.cookieconsent.js",
+        "cbCookieConsent/scss/cargobay.cookieconsent.scss",
+        "cbGeneral/js/cargobay.general.js",
+        "cbHasSpace/js/cargobay.has-space.js",
+        "cbScrollTo/js/cargobay.scroll-to.js",
+        "cbToggle/js/cargobay.toggle.js",
+        "cbToggle/scss/cargobay.toggle.scss",
+        "cbVideolink/js/cargobay.videolink.js",
+        "cbVideolink/scss/cargobay.videolink.scss"
+    ],
+    "moduleType": [
+        "globals"
+    ],
+    "keywords": [
+        "component",
+        "library",
+        "js",
+        "kunstmaan",
+        "cargobay",
+        "Cargo Bay"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "cb*/test",
+        "demo"
+    ]
+}

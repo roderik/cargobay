@@ -1,4 +1,4 @@
-# Cargobay _v0.8.8_
+# Cargobay _v1.0.0_
 
 [![Build Status](https://travis-ci.org/Kunstmaan/cargobay.svg)](https://travis-ci.org/Kunstmaan/cargobay)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
