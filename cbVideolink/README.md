@@ -1,29 +1,22 @@
-## Cargo Bay Videolink
+## Cargobay Videolink
 
 ### General
-- Support for Youtube and Vimeo
+- Support for Youtube, Vimeo and Dailymotion
 - Replaces image with video (lazy-load video's)
 
 
 
 ### Required includes
 - **Javascript**
-    - jquery.videolink.js
+    - cargobay.videolink.min.js
 - **Styles**
-    - videolink.scss
-
-
-
-### Dependencies
-- jQuery
-- Modernizr.csstransitions (check css-transitions)
-- FitVids.js (if you want make the video's fluid - [fitvidsjs.com](http://fitvidsjs.com/))
+    - cargobay.videolink.min.scss
 
 
 
 ### Initialise
 ```javascript
-cargobay.videolink.init();
+cargobay.videolink();
 ```
 
 
@@ -36,15 +29,13 @@ Available values are " *youtube* " and " *vimeo* "
 
 The **data-video-id** attribute is used by the javascript to load the requested video.
 
-With the **data-make-fluid** attribute, you can make the embedded videos responsive.
-Available values are " *true* " or " *false* "
+The **.js-videolink-placeholder** is **optional**. If this class is set on the image, the src will be replaced by the thumbnail set by the providers API.
 
-**Don't forget to include fitVids if you want to use this feature! [fitvidsjs.com](http://fitvidsjs.com/)**
 
 ```html
 <div class="videolink">
     <a href="//www.youtube.com/embed/C9OfBcjyxKY" target="_blank" class="js-videolink-play-link videolink__video-link" data-video-provider="youtube" data-video-id="C9OfBcjyxKY" data-make-fluid="true">
-        <img src="img/videolink.jpg" alt="videolink-image" class="videolink__video-link__image" />
+        <img src="img/videolink.jpg" alt="videolink-image" class="videolink__video-link__image js-videolink-placeholder" />
     </a>
     <div class="js-videolink-container videolink__video-container"></div>
 </div>
@@ -52,16 +43,8 @@ Available values are " *true* " or " *false* "
 
 
 
-### Available scss variables
-```scss
-$videolink-background:          #000;
-```
-
-
-
 ### Support
-#### JQuery version
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
-- IE 9 and up
+- IE10 and up
