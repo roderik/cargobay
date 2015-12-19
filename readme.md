@@ -8,6 +8,7 @@ Cargobay is a utility library with some useful and commonly used components and 
 
 ## Includes
 - [Cookie-consent bar](cbCookieConsent/)
+- [General](cbGeneral/)
 - [Has space](cbHasSpace/)
 - [Scroll-to](cbScrollTo/)
 - [Toggle](cbToggle/)
